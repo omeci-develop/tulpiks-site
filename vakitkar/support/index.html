@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="Support — Tam Vakit · TULPIKS.">
+<title>Support — Tam Vakit</title>
+<style>:root{
+  --bg:#0a0a0a; --card:#131316; --fg:#e8eaed; --muted:#9aa1ac;
+  --line:#24262b; --accent:#35c79a; --gold:#e7c46b;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#ffffff; --card:#f6f8f7; --fg:#16181c; --muted:#5b6270;
+    --line:#e6e8ec; --accent:#0f7a5c; --gold:#8a6a1f;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-text-size-adjust:100%;}
+.wrap{max-width:780px;margin:0 auto;padding:1.5rem 1.2rem 4rem;}
+.skip{position:absolute;left:-9999px;}
+.skip:focus{position:static;display:inline-block;margin-bottom:1rem;color:var(--accent);}
+header{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;
+  justify-content:space-between;padding-bottom:1rem;}
+.marke{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:inherit;}
+.marke svg{display:block;border-radius:.6rem;}
+.marke b{display:block;font-size:1.05rem;letter-spacing:.01em;}
+.marke small{display:block;color:var(--muted);font-size:.8rem;}
+.langs{display:flex;gap:.35rem;}
+.langs button{font:inherit;font-size:.85rem;cursor:pointer;border:1px solid var(--line);
+  background:var(--card);color:var(--fg);padding:.3rem .65rem;border-radius:.5rem;}
+.langs button[aria-selected="true"]{background:var(--accent);color:var(--bg);
+  border-color:var(--accent);font-weight:600;}
+nav{display:flex;gap:.3rem;flex-wrap:wrap;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);padding:.5rem 0;margin-bottom:2rem;}
+nav a{text-decoration:none;color:var(--muted);font-size:.9rem;
+  padding:.35rem .7rem;border-radius:.5rem;}
+nav a:hover{color:var(--fg);background:var(--card);}
+nav a[aria-current="page"]{color:var(--fg);background:var(--card);font-weight:600;}
+h1{font-size:1.6rem;line-height:1.25;margin:.2rem 0 1rem;}
+h2{font-size:1.2rem;margin:2.2rem 0 .6rem;scroll-margin-top:1rem;}
+h3{font-size:1rem;margin:1.4rem 0 .35rem;color:var(--accent);}
+p{margin:.7rem 0}
+ul{margin:.6rem 0;padding-inline-start:1.2rem}
+li{margin:.3rem 0}
+a{color:var(--accent);}
+.muted{color:var(--muted);font-size:.9rem;}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:.75rem;
+  padding:.9rem 1.1rem;margin:1.5rem 0 2rem;}
+.toc b{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--muted);font-weight:600;}
+.toc ol{margin:.5rem 0 0;padding-inline-start:1.3rem;}
+.toc li{margin:.2rem 0}
+.toc a{color:var(--fg);text-decoration:none}
+.toc a:hover{color:var(--accent);text-decoration:underline}
+[hidden]{display:none !important;}
+.rv{unicode-bidi:bidi-override;direction:rtl;}
+footer{margin-top:3rem;border-top:1px solid var(--line);padding-top:1rem;
+  color:var(--muted);font-size:.85rem;}
+footer .gold{color:var(--gold);}
+@media (max-width:520px){
+  h1{font-size:1.35rem} .wrap{padding-top:1rem}
+}
+</style>
+</head>
+<body>
+<span data-doctitle="Support — Tam Vakit" data-lang="en" hidden></span>
+<span data-doctitle="Hilfe &amp; Kontakt — Tam Vakit" data-lang="de" hidden></span>
+<span data-doctitle="Destek — Tam Vakit" data-lang="tr" hidden></span>
+<a class="skip" href="#inhalt" data-lang="en">Skip to content</a>
+<a class="skip" href="#inhalt" data-lang="de">Zum Inhalt springen</a>
+<a class="skip" href="#inhalt" data-lang="tr">İçeriğe geç</a>
+<div class="wrap">
+  <header>
+    <a class="marke" href="/vakitkar/">
+      <svg viewBox="0 0 128 128" width="40" height="40" role="img" aria-label="Tam Vakit" focusable="false"><rect width="128" height="128" rx="28" fill="#1fa37c"/><polygon points="64,26 104,49 64,72 24,49" fill="#333333"/><polygon points="24,49 64,72 64,118 24,95" fill="#0b0b0b"/><polygon points="104,49 64,72 64,118 104,95" fill="#1b1b1b"/><polygon points="24,63 64,86 64,91 24,68" fill="#e7c46b"/><polygon points="104,63 64,86 64,91 104,68" fill="#e7c46b"/><polygon points="64,96 78,88 78,109 64,117" fill="#e7c46b"/></svg>
+      <span><b>Tam Vakit</b><small>TULPIKS</small></span>
+    </a>
+    <div class="langs" role="tablist" aria-label="Language">
+      <button type="button" role="tab" data-setlang="en" aria-selected="true">English</button>
+      <button type="button" role="tab" data-setlang="de" aria-selected="false">Deutsch</button>
+      <button type="button" role="tab" data-setlang="tr" aria-selected="false">Türkçe</button>
+    </div>
+  </header>
+  <nav aria-label="Site">
+    <a href="/" data-lang="en">TULPIKS</a>
+    <a href="/" data-lang="de">TULPIKS</a>
+    <a href="/" data-lang="tr">TULPIKS</a>
+    <a href="/vakitkar/" data-lang="en">Privacy</a>
+    <a href="/vakitkar/" data-lang="de">Datenschutz</a>
+    <a href="/vakitkar/" data-lang="tr">Gizlilik</a>
+    <a href="/vakitkar/support/" aria-current="page" data-lang="en">Support</a>
+    <a href="/vakitkar/support/" aria-current="page" data-lang="de">Hilfe</a>
+    <a href="/vakitkar/support/" aria-current="page" data-lang="tr">Destek</a>
+  </nav>
+  <main id="inhalt">
+  <section data-lang="en">
+    <div class="toc"><b>Contents</b><ol>
+      <li><a href="#en-write-to-us">Write to us</a></li>
+      <li><a href="#en-what-belongs-in-a-bug-report">What belongs in a bug report</a></li>
+      <li><a href="#en-the-times-differ-from-my-mosque">The times differ from my mosque</a></li>
+      <li><a href="#en-the-adhan-did-not-sound">The adhan did not sound</a></li>
+      <li><a href="#en-crash-reports">Crash reports</a></li>
+      <li><a href="#en-privacy">Privacy</a></li>
+    </ol></div>
+<h1>Support</h1>
+<p><strong>As of:</strong> 1 October 2026</p>
+<h2 id="en-write-to-us">Write to us</h2>
+<ul>
+<li><strong>Email:</strong> <span class="rv" data-mail>moc.skiplut@troppus</span></li>
+</ul>
+<p>We answer in German, English and Turkish. We are a very small team — expect a few days rather than minutes.</p>
+<h2 id="en-what-belongs-in-a-bug-report">What belongs in a bug report</h2>
+<p>The more precise these four details are, the sooner we find the cause:</p>
+<ul>
+<li>The <strong>version line</strong> from *Settings ▸ Version*. It looks like this:</li>
+</ul>
+<p>`1.0.0 (Build 107) · a1b2c3d · 2026-08-11T14:40Z · prod`. The string in the middle tells us the exact commit your build came from.</p>
+<ul>
+<li><strong>Device and Android version</strong>, for example &quot;Samsung Galaxy S23, Android 15&quot;.</li>
+<li>The selected <strong>calculation method</strong> and your <strong>location</strong>.</li>
+<li>What you expected, and what happened instead.</li>
+</ul>
+<h2 id="en-the-times-differ-from-my-mosque">The times differ from my mosque</h2>
+<p>That is usually not a bug but a question of method. *Settings ▸ Calculation method* offers several.</p>
+<p>For Türkiye and the Turkish community in Europe we ship the <strong>official Diyanet times</strong> — that is the &quot;Türkiye&quot; method. They are not calculated but the values published by the authority. Other methods use different twilight angles and therefore differ by a few minutes. Both are legitimate; what matters is which view your community follows.</p>
+<p>At far northern locations, twilight does not end at all in summer. A substitute rule then divides the night arithmetically.</p>
+<h2 id="en-the-adhan-did-not-sound">The adhan did not sound</h2>
+<p>Almost always this is Android's battery saving, not the app. Three things help:</p>
+<ul>
+<li><strong>Disable battery optimisation</strong> for Tam Vakit (Android settings ▸ Apps ▸</li>
+</ul>
+<p>Tam Vakit ▸ Battery ▸ *Unrestricted*).</p>
+<ul>
+<li><strong>Allow exact alarms</strong> — Android 13 and newer asks for this separately.</li>
+<li>Check whether the <strong>notification channel</strong> has been muted.</li>
+</ul>
+<p>If none of that helps, write to us with the four details above.</p>
+<h2 id="en-crash-reports">Crash reports</h2>
+<p>Tam Vakit sends crash reports <strong>only</strong> if you switch that on in the settings. It is off by default. What is transmitted is described in the privacy policy.</p>
+<h2 id="en-privacy">Privacy</h2>
+<p>The app works <strong>without an account, without ads and without tracking</strong>. Details on which data leave the device, and when, are in our privacy policy.</p>
+  </section>
+  <section data-lang="de" hidden>
+    <div class="toc"><b>Inhalt</b><ol>
+      <li><a href="#de-schreib-uns">Schreib uns</a></li>
+      <li><a href="#de-was-in-eine-fehlermeldung-gehört">Was in eine Fehlermeldung gehört</a></li>
+      <li><a href="#de-die-zeiten-weichen-von-meiner-moschee-ab">Die Zeiten weichen von meiner Moschee ab</a></li>
+      <li><a href="#de-der-adhan-kam-nicht">Der Adhan kam nicht</a></li>
+      <li><a href="#de-absturzberichte">Absturzberichte</a></li>
+      <li><a href="#de-datenschutz">Datenschutz</a></li>
+    </ol></div>
+<h1>Hilfe &amp; Kontakt</h1>
+<p><strong>Stand:</strong> 1. Oktober 2026</p>
+<h2 id="de-schreib-uns">Schreib uns</h2>
+<ul>
+<li><strong>E-Mail:</strong> <span class="rv" data-mail>moc.skiplut@troppus</span></li>
+</ul>
+<p>Wir antworten auf Deutsch, Englisch und Türkisch. Wir sind ein sehr kleines Team — rechne mit ein paar Tagen, nicht mit Minuten.</p>
+<h2 id="de-was-in-eine-fehlermeldung-gehört">Was in eine Fehlermeldung gehört</h2>
+<p>Je genauer diese vier Angaben sind, desto eher finden wir die Ursache:</p>
+<ul>
+<li>Die <strong>Versionszeile</strong> aus *Einstellungen ▸ Version*. Sie sieht etwa so aus:</li>
+</ul>
+<p>`1.0.0 (Build 107) · a1b2c3d · 2026-08-11T14:40Z · prod`. Die Zeichenfolge in der Mitte sagt uns auf den Commit genau, welchen Stand du hast.</p>
+<ul>
+<li><strong>Gerät und Android-Version</strong>, zum Beispiel „Samsung Galaxy S23, Android 15&quot;.</li>
+<li>Die eingestellte <strong>Berechnungsmethode</strong> und der <strong>Ort</strong>.</li>
+<li>Was du erwartet hast und was stattdessen passiert ist.</li>
+</ul>
+<h2 id="de-die-zeiten-weichen-von-meiner-moschee-ab">Die Zeiten weichen von meiner Moschee ab</h2>
+<p>Das ist meistens kein Fehler, sondern eine Frage der Methode. Unter *Einstellungen ▸ Berechnungsmethode* stehen mehrere Verfahren zur Wahl.</p>
+<p>Für die Türkei und die türkische Gemeinde in Europa liefern wir die <strong>amtlichen Zeiten des Diyanet</strong> aus — das ist die Methode „Türkiye&quot;. Sie sind nicht berechnet, sondern die veröffentlichten Werte der Behörde. Andere Methoden rechnen mit unterschiedlichen Dämmerungswinkeln und weichen deshalb um einige Minuten ab. Beides ist zulässig; entscheidend ist, welcher Auffassung deine Gemeinde folgt.</p>
+<p>Bei sehr weit nördlich gelegenen Orten kommt hinzu, dass die Dämmerung im Sommer nicht endet. Dann greift eine Ersatzregel, die die Nacht rechnerisch teilt.</p>
+<h2 id="de-der-adhan-kam-nicht">Der Adhan kam nicht</h2>
+<p>Fast immer liegt es an Androids Energiesparfunktionen, nicht an der App. Drei Dinge helfen:</p>
+<ul>
+<li><strong>Akku-Optimierung ausschalten</strong> für Tam Vakit (Android-Einstellungen ▸ Apps ▸</li>
+</ul>
+<p>Tam Vakit ▸ Akku ▸ *Uneingeschränkt*).</p>
+<ul>
+<li><strong>Exakte Alarme erlauben</strong> — Android 13 und neuer fragt das gesondert ab.</li>
+<li>Prüfen, ob der <strong>Benachrichtigungskanal</strong> stummgeschaltet wurde.</li>
+</ul>
+<p>Hilft das nicht, schreib uns mit den vier Angaben von oben.</p>
+<h2 id="de-absturzberichte">Absturzberichte</h2>
+<p>Tam Vakit sendet Absturzberichte <strong>nur</strong>, wenn du es in den Einstellungen ausdrücklich einschaltest. Standardmäßig ist das aus. Was dabei übertragen wird, steht in der Datenschutzerklärung.</p>
+<h2 id="de-datenschutz">Datenschutz</h2>
+<p>Die App kommt <strong>ohne Konto, ohne Werbung und ohne Tracking</strong> aus. Einzelheiten dazu, welche Daten in welchen Fällen das Gerät verlassen, stehen in unserer Datenschutzerklärung.</p>
+  </section>
+  <section data-lang="tr" hidden>
+    <div class="toc"><b>İçindekiler</b><ol>
+      <li><a href="#tr-bize-yazın">Bize yazın</a></li>
+      <li><a href="#tr-hata-bildiriminde-neler-olmalı">Hata bildiriminde neler olmalı</a></li>
+      <li><a href="#tr-vakitler-camimden-farklı">Vakitler camimden farklı</a></li>
+      <li><a href="#tr-ezan-okunmadı">Ezan okunmadı</a></li>
+      <li><a href="#tr-çökme-raporları">Çökme raporları</a></li>
+      <li><a href="#tr-gizlilik">Gizlilik</a></li>
+    </ol></div>
+<h1>Destek</h1>
+<p><strong>Güncelleme:</strong> 1 Ekim 2026</p>
+<h2 id="tr-bize-yazın">Bize yazın</h2>
+<ul>
+<li><strong>E-posta:</strong> <span class="rv" data-mail>moc.skiplut@troppus</span></li>
+</ul>
+<p>Almanca, İngilizce ve Türkçe yanıt veriyoruz. Çok küçük bir ekibiz — dakikalar değil, birkaç gün bekleyin.</p>
+<h2 id="tr-hata-bildiriminde-neler-olmalı">Hata bildiriminde neler olmalı</h2>
+<p>Şu dört bilgi ne kadar kesin olursa, nedeni o kadar çabuk buluruz:</p>
+<ul>
+<li>*Ayarlar ▸ Sürüm* bölümündeki <strong>sürüm satırı</strong>. Şuna benzer:</li>
+</ul>
+<p>`1.0.0 (Build 107) · a1b2c3d · 2026-08-11T14:40Z · prod`. Ortadaki karakter dizisi, kullandığınız yapının tam olarak hangi commit'ten geldiğini söyler.</p>
+<ul>
+<li><strong>Cihaz ve Android sürümü</strong>, örneğin „Samsung Galaxy S23, Android 15&quot;.</li>
+<li>Seçili <strong>hesaplama yöntemi</strong> ve <strong>konum</strong>.</li>
+<li>Ne beklediğiniz ve bunun yerine ne olduğu.</li>
+</ul>
+<h2 id="tr-vakitler-camimden-farklı">Vakitler camimden farklı</h2>
+<p>Bu genellikle bir hata değil, yöntem meselesidir. *Ayarlar ▸ Hesaplama yöntemi* altında birkaç seçenek vardır.</p>
+<p>Türkiye ve Avrupa'daki Türk cemaati için <strong>Diyanet'in resmî vakitlerini</strong> sunuyoruz — „Türkiye&quot; yöntemi budur. Bu vakitler hesaplanmaz; kurumun yayımladığı değerlerdir. Diğer yöntemler farklı şafak açılarıyla hesaplar ve bu nedenle birkaç dakika sapar. Her ikisi de geçerlidir; belirleyici olan, cemaatinizin hangi görüşü izlediğidir.</p>
+<p>Çok kuzeydeki yerlerde yaz aylarında şafak hiç sona ermez. O zaman geceyi hesaplama yoluyla bölen bir ikame kural devreye girer.</p>
+<h2 id="tr-ezan-okunmadı">Ezan okunmadı</h2>
+<p>Neredeyse her zaman bunun nedeni uygulama değil, Android'in pil tasarrufudur. Üç şey yardımcı olur:</p>
+<ul>
+<li>Tam Vakit için <strong>pil optimizasyonunu kapatın</strong> (Android ayarları ▸ Uygulamalar</li>
+</ul>
+<p>▸ Tam Vakit ▸ Pil ▸ *Kısıtlanmamış*).</p>
+<ul>
+<li><strong>Tam zamanlı alarmlara izin verin</strong> — Android 13 ve sonrası bunu ayrıca sorar.</li>
+<li><strong>Bildirim kanalının</strong> sessize alınıp alınmadığını kontrol edin.</li>
+</ul>
+<p>Bunlar yardımcı olmazsa, yukarıdaki dört bilgiyle bize yazın.</p>
+<h2 id="tr-çökme-raporları">Çökme raporları</h2>
+<p>Tam Vakit çökme raporlarını <strong>yalnızca</strong> ayarlardan açıkça açarsanız gönderir. Varsayılan olarak kapalıdır. Nelerin iletildiği gizlilik politikasında yazılıdır.</p>
+<h2 id="tr-gizlilik">Gizlilik</h2>
+<p>Uygulama <strong>hesapsız, reklamsız ve izlemesiz</strong> çalışır. Hangi verilerin hangi durumlarda cihazdan ayrıldığına dair ayrıntılar gizlilik politikamızdadır.</p>
+  </section>
+  </main>
+  <footer>
+    <p data-lang="en">TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span><br><span class="gold">This page loads no fonts, scripts or images from third parties. No cookies, no tracking.</span></p>
+    <p data-lang="de">TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span><br><span class="gold">Diese Seite lädt keine Schriften, Skripte oder Bilder von Dritten. Keine Cookies, kein Tracking.</span></p>
+    <p data-lang="tr">TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span><br><span class="gold">Bu sayfa üçüncü taraflardan yazı tipi, betik veya görsel yüklemez. Çerez yok, izleme yok.</span></p>
+  </footer>
+</div>
+<script>(function(){
+  var LANGS=['en','de','tr'];
+  function show(l){
+    if(LANGS.indexOf(l)<0) l='en';
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      el.hidden = el.getAttribute('data-lang')!==l;
+    });
+    document.querySelectorAll('[data-setlang]').forEach(function(b){
+      b.setAttribute('aria-selected', String(b.getAttribute('data-setlang')===l));
+    });
+    document.documentElement.lang=l;
+    var t=document.querySelector('[data-doctitle][data-lang="'+l+'"]');
+    if(t) document.title=t.getAttribute('data-doctitle');
+    try{ localStorage.setItem('lang',l); }catch(e){}
+  }
+  document.querySelectorAll('[data-setlang]').forEach(function(b){
+    b.addEventListener('click',function(){ show(b.getAttribute('data-setlang')); });
+  });
+  document.querySelectorAll('.rv').forEach(function(el){
+    var t=el.textContent.split('').reverse().join('');
+    var n;
+    if(el.hasAttribute('data-mail')){
+      n=document.createElement('a'); n.href='mailto:'+t; n.textContent=t;
+    } else { n=document.createTextNode(t); }
+    el.parentNode.replaceChild(n,el);
+  });
+  var gespeichert=null;
+  try{ gespeichert=localStorage.getItem('lang'); }catch(e){}
+  show(gespeichert || (navigator.language||'en').slice(0,2));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="TULPIKS — apps that genuinely help, with fresh ideas.">
+<title>TULPIKS</title>
+<style>:root{
+  --bg:#0a0a0a; --card:#131316; --fg:#e8eaed; --muted:#9aa1ac;
+  --line:#24262b; --accent:#35c79a; --gold:#e7c46b;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#ffffff; --card:#f6f8f7; --fg:#16181c; --muted:#5b6270;
+    --line:#e6e8ec; --accent:#0f7a5c; --gold:#8a6a1f;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-text-size-adjust:100%;}
+.wrap{max-width:780px;margin:0 auto;padding:1.5rem 1.2rem 4rem;}
+.skip{position:absolute;left:-9999px;}
+.skip:focus{position:static;display:inline-block;margin-bottom:1rem;color:var(--accent);}
+header{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;
+  justify-content:space-between;padding-bottom:1rem;}
+.marke{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:inherit;}
+.marke svg{display:block;border-radius:.6rem;}
+.marke b{display:block;font-size:1.05rem;letter-spacing:.01em;}
+.marke small{display:block;color:var(--muted);font-size:.8rem;}
+.langs{display:flex;gap:.35rem;}
+.langs button{font:inherit;font-size:.85rem;cursor:pointer;border:1px solid var(--line);
+  background:var(--card);color:var(--fg);padding:.3rem .65rem;border-radius:.5rem;}
+.langs button[aria-selected="true"]{background:var(--accent);color:var(--bg);
+  border-color:var(--accent);font-weight:600;}
+nav{display:flex;gap:.3rem;flex-wrap:wrap;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);padding:.5rem 0;margin-bottom:2rem;}
+nav a{text-decoration:none;color:var(--muted);font-size:.9rem;
+  padding:.35rem .7rem;border-radius:.5rem;}
+nav a:hover{color:var(--fg);background:var(--card);}
+nav a[aria-current="page"]{color:var(--fg);background:var(--card);font-weight:600;}
+h1{font-size:1.6rem;line-height:1.25;margin:.2rem 0 1rem;}
+h2{font-size:1.2rem;margin:2.2rem 0 .6rem;scroll-margin-top:1rem;}
+h3{font-size:1rem;margin:1.4rem 0 .35rem;color:var(--accent);}
+p{margin:.7rem 0}
+ul{margin:.6rem 0;padding-inline-start:1.2rem}
+li{margin:.3rem 0}
+a{color:var(--accent);}
+.muted{color:var(--muted);font-size:.9rem;}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:.75rem;
+  padding:.9rem 1.1rem;margin:1.5rem 0 2rem;}
+.toc b{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--muted);font-weight:600;}
+.toc ol{margin:.5rem 0 0;padding-inline-start:1.3rem;}
+.toc li{margin:.2rem 0}
+.toc a{color:var(--fg);text-decoration:none}
+.toc a:hover{color:var(--accent);text-decoration:underline}
+[hidden]{display:none !important;}
+.rv{unicode-bidi:bidi-override;direction:rtl;}
+footer{margin-top:3rem;border-top:1px solid var(--line);padding-top:1rem;
+  color:var(--muted);font-size:.85rem;}
+footer .gold{color:var(--gold);}
+@media (max-width:520px){
+  h1{font-size:1.35rem} .wrap{padding-top:1rem}
+}
+</style>
+</head>
+<body>
+<span data-doctitle="TULPIKS" data-lang="en" hidden></span>
+<span data-doctitle="TULPIKS" data-lang="de" hidden></span>
+<span data-doctitle="TULPIKS" data-lang="tr" hidden></span>
+<a class="skip" href="#inhalt" data-lang="en">Skip to content</a>
+<a class="skip" href="#inhalt" data-lang="de">Zum Inhalt springen</a>
+<a class="skip" href="#inhalt" data-lang="tr">İçeriğe geç</a>
+<div class="wrap">
+  <header>
+    <a class="marke" href="/">
+      <span><b>TULPIKS</b></span>
+    </a>
+    <div class="langs" role="tablist" aria-label="Language">
+      <button type="button" role="tab" data-setlang="en" aria-selected="true">English</button>
+      <button type="button" role="tab" data-setlang="de" aria-selected="false">Deutsch</button>
+      <button type="button" role="tab" data-setlang="tr" aria-selected="false">Türkçe</button>
+    </div>
+  </header>
+  <nav aria-label="Site">
+    <a href="/" aria-current="page" data-lang="en">TULPIKS</a>
+    <a href="/" aria-current="page" data-lang="de">TULPIKS</a>
+    <a href="/" aria-current="page" data-lang="tr">TULPIKS</a>
+    <a href="/vakitkar/" data-lang="en">Privacy</a>
+    <a href="/vakitkar/" data-lang="de">Datenschutz</a>
+    <a href="/vakitkar/" data-lang="tr">Gizlilik</a>
+    <a href="/vakitkar/support/" data-lang="en">Support</a>
+    <a href="/vakitkar/support/" data-lang="de">Hilfe</a>
+    <a href="/vakitkar/support/" data-lang="tr">Destek</a>
+  </nav>
+  <main id="inhalt">
+  <section data-lang="en">
+<h1>TULPIKS</h1>
+<p>We build apps that genuinely help in everyday life — with fresh ideas, thought through to the last detail, and built to be relied on.</p>
+<h2 id="en-tam-vakit">Tam Vakit</h2>
+<p>Prayer times, Qibla direction and Adhan reminders for Muslims — no ads, no tracking, no account required.</p>
+<ul>
+<li><strong>Privacy:</strong> <a href="https://tulpiks.com/vakitkar/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/</a></li>
+<li><strong>Support:</strong> <a href="https://tulpiks.com/vakitkar/support/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/support/</a></li>
+</ul>
+<h2 id="en-contact">Contact</h2>
+<p>TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span></p>
+  </section>
+  <section data-lang="de" hidden>
+<h1>TULPIKS</h1>
+<p>Wir entwickeln Apps, die im Alltag wirklich helfen — mit neuen Ideen, durchdacht bis ins Detail und verlässlich.</p>
+<h2 id="de-tam-vakit">Tam Vakit</h2>
+<p>Gebetszeiten, Qibla-Richtung und Adhan-Erinnerung für Muslime — ohne Werbung, ohne Tracking, ohne Konto.</p>
+<ul>
+<li><strong>Datenschutz:</strong> <a href="https://tulpiks.com/vakitkar/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/</a></li>
+<li><strong>Hilfe &amp; Kontakt:</strong> <a href="https://tulpiks.com/vakitkar/support/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/support/</a></li>
+</ul>
+<h2 id="de-kontakt">Kontakt</h2>
+<p>TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span></p>
+  </section>
+  <section data-lang="tr" hidden>
+<h1>TULPIKS</h1>
+<p>Günlük hayatta gerçekten işe yarayan uygulamalar geliştiriyoruz — yeni fikirlerle, en ince ayrıntısına kadar düşünülmüş ve güvenilir.</p>
+<h2 id="tr-tam-vakit">Tam Vakit</h2>
+<p>Müslümanlar için namaz vakitleri, kıble yönü ve ezan hatırlatıcısı — reklamsız, takipsiz, hesap gerektirmeden.</p>
+<ul>
+<li><strong>Gizlilik:</strong> <a href="https://tulpiks.com/vakitkar/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/</a></li>
+<li><strong>Destek:</strong> <a href="https://tulpiks.com/vakitkar/support/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/support/</a></li>
+</ul>
+<h2 id="tr-iletişim">İletişim</h2>
+<p>TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span></p>
+  </section>
+  </main>
+  <footer>
+    <p data-lang="en">TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span><br><span class="gold">This page loads no fonts, scripts or images from third parties. No cookies, no tracking.</span></p>
+    <p data-lang="de">TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span><br><span class="gold">Diese Seite lädt keine Schriften, Skripte oder Bilder von Dritten. Keine Cookies, kein Tracking.</span></p>
+    <p data-lang="tr">TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span><br><span class="gold">Bu sayfa üçüncü taraflardan yazı tipi, betik veya görsel yüklemez. Çerez yok, izleme yok.</span></p>
+  </footer>
+</div>
+<script>(function(){
+  var LANGS=['en','de','tr'];
+  function show(l){
+    if(LANGS.indexOf(l)<0) l='en';
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      el.hidden = el.getAttribute('data-lang')!==l;
+    });
+    document.querySelectorAll('[data-setlang]').forEach(function(b){
+      b.setAttribute('aria-selected', String(b.getAttribute('data-setlang')===l));
+    });
+    document.documentElement.lang=l;
+    var t=document.querySelector('[data-doctitle][data-lang="'+l+'"]');
+    if(t) document.title=t.getAttribute('data-doctitle');
+    try{ localStorage.setItem('lang',l); }catch(e){}
+  }
+  document.querySelectorAll('[data-setlang]').forEach(function(b){
+    b.addEventListener('click',function(){ show(b.getAttribute('data-setlang')); });
+  });
+  document.querySelectorAll('.rv').forEach(function(el){
+    var t=el.textContent.split('').reverse().join('');
+    var n;
+    if(el.hasAttribute('data-mail')){
+      n=document.createElement('a'); n.href='mailto:'+t; n.textContent=t;
+    } else { n=document.createTextNode(t); }
+    el.parentNode.replaceChild(n,el);
+  });
+  var gespeichert=null;
+  try{ gespeichert=localStorage.getItem('lang'); }catch(e){}
+  show(gespeichert || (navigator.language||'en').slice(0,2));
+})();
+</script>
+</body>
+</html>
