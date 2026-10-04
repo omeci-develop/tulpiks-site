@@ -4,143 +4,395 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="index,follow">
-<meta name="color-scheme" content="dark light">
+<meta name="color-scheme" content="light">
 <meta name="description" content="TULPIKS — apps that genuinely help, with fresh ideas.">
 <title>TULPIKS</title>
 <style>:root{
-  --bg:#0a0a0a; --card:#131316; --fg:#e8eaed; --muted:#9aa1ac;
-  --line:#24262b; --accent:#35c79a; --gold:#e7c46b;
-}
-@media (prefers-color-scheme: light){
-  :root{
-    --bg:#ffffff; --card:#f6f8f7; --fg:#16181c; --muted:#5b6270;
-    --line:#e6e8ec; --accent:#0f7a5c; --gold:#8a6a1f;
-  }
+  --bg:#ffffff; --card:#f6f8f7; --card2:#eef2f0; --fg:#16181c; --muted:#5b6270;
+  --line:#e6e8ec; --accent:#0f7a5c; --accent2:#3aa883; --gold:#8a6a1f;
+  --dot:rgba(15,122,92,.16);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);
-  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  -webkit-text-size-adjust:100%;}
-.wrap{max-width:780px;margin:0 auto;padding:1.5rem 1.2rem 4rem;}
-.skip{position:absolute;left:-9999px;}
-.skip:focus{position:static;display:inline-block;margin-bottom:1rem;color:var(--accent);}
-header{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;
-  justify-content:space-between;padding-bottom:1rem;}
-.marke{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:inherit;}
-.marke svg{display:block;border-radius:.6rem;}
-.marke b{display:block;font-size:1.05rem;letter-spacing:.01em;}
-.marke small{display:block;color:var(--muted);font-size:.8rem;}
-.langs{display:flex;gap:.35rem;}
-.langs button{font:inherit;font-size:.85rem;cursor:pointer;border:1px solid var(--line);
-  background:var(--card);color:var(--fg);padding:.3rem .65rem;border-radius:.5rem;}
-.langs button[aria-selected="true"]{background:var(--accent);color:var(--bg);
-  border-color:var(--accent);font-weight:600;}
-nav{display:flex;gap:.3rem;flex-wrap:wrap;border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);padding:.5rem 0;margin-bottom:2rem;}
-nav a{text-decoration:none;color:var(--muted);font-size:.9rem;
-  padding:.35rem .7rem;border-radius:.5rem;}
-nav a:hover{color:var(--fg);background:var(--card);}
-nav a[aria-current="page"]{color:var(--fg);background:var(--card);font-weight:600;}
-h1{font-size:1.6rem;line-height:1.25;margin:.2rem 0 1rem;}
-h2{font-size:1.2rem;margin:2.2rem 0 .6rem;scroll-margin-top:1rem;}
-h3{font-size:1rem;margin:1.4rem 0 .35rem;color:var(--accent);}
-p{margin:.7rem 0}
-ul{margin:.6rem 0;padding-inline-start:1.2rem}
-li{margin:.3rem 0}
-a{color:var(--accent);}
-.muted{color:var(--muted);font-size:.9rem;}
-.toc{background:var(--card);border:1px solid var(--line);border-radius:.75rem;
-  padding:.9rem 1.1rem;margin:1.5rem 0 2rem;}
-.toc b{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;
-  color:var(--muted);font-weight:600;}
-.toc ol{margin:.5rem 0 0;padding-inline-start:1.3rem;}
-.toc li{margin:.2rem 0}
-.toc a{color:var(--fg);text-decoration:none}
-.toc a:hover{color:var(--accent);text-decoration:underline}
-[hidden]{display:none !important;}
-.rv{unicode-bidi:bidi-override;direction:rtl;}
-footer{margin-top:3rem;border-top:1px solid var(--line);padding-top:1rem;
-  color:var(--muted);font-size:.85rem;}
-footer .gold{color:var(--gold);}
-@media (max-width:520px){
-  h1{font-size:1.35rem} .wrap{padding-top:1rem}
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-text-size-adjust:100%}
+[hidden]{display:none !important}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+a{color:var(--accent)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{position:fixed;left:1rem;top:1rem;z-index:30;background:var(--bg);padding:.4rem .7rem}
+.rv{unicode-bidi:bidi-override;direction:rtl}
+
+/* Zeichen */
+.lg .s{fill:none;stroke:var(--accent);stroke-linecap:round;stroke-linejoin:round}
+.lg .sl{stroke-width:5}
+.lg .st{fill:none;stroke:var(--gold);stroke-width:3.5;stroke-linecap:round}
+.lg .fa{fill:var(--accent)}
+.lg .fa2{fill:var(--accent2)}
+.lg .fg{fill:var(--gold)}
+.lg .sep{stroke:var(--bg);stroke-width:5}
+.wordmark{font-weight:800;letter-spacing:.14em}
+
+/* Kopf */
+header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);
+  background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
+.brand .wordmark{font-size:1.05rem}
+.navl{display:flex;gap:.2rem;align-items:center}
+.navl a{color:var(--muted);text-decoration:none;font-size:.92rem;padding:.4rem .7rem;border-radius:.5rem}
+.navl a:hover{color:var(--fg);background:var(--card)}
+.langs{display:flex;gap:.25rem;margin-left:.6rem}
+.langs button{font:inherit;font-size:.78rem;border:1px solid var(--line);background:var(--card);
+  color:var(--muted);padding:.2rem .5rem;border-radius:.4rem;cursor:pointer}
+.langs button[aria-selected="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700}
+@media (max-width:720px){ .navl a{display:none} }
+
+/* Bühne */
+.hero{position:relative;overflow:hidden;min-height:min(88vh,760px);display:grid;place-items:center;
+  text-align:center;padding:80px 0 60px}
+.garden{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(var(--dot) 1.2px,transparent 1.4px);background-size:28px 28px;
+  mask-image:radial-gradient(ellipse at 50% 45%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse at 50% 45%,#000 30%,transparent 75%)}
+.sprout{position:absolute;width:44px;height:44px;opacity:.32;animation:leben 7s ease-in-out both}
+.sprout path{fill:none;stroke:var(--accent);stroke-width:9;stroke-linecap:round;stroke-linejoin:round;
+  animation:zeichnen 2.6s ease-out both}
+.sprout path.lf{fill:var(--accent2);stroke:none;animation:auf .6s 2.4s ease-out both}
+.sprout rect{fill:var(--gold);animation:auf .6s 2.2s ease-out both}
+.sprout.still{animation:none}
+@keyframes zeichnen{from{stroke-dasharray:260;stroke-dashoffset:260}to{stroke-dasharray:260;stroke-dashoffset:0}}
+@keyframes auf{from{opacity:0}to{opacity:1}}
+@keyframes leben{0%{opacity:0;transform:translateY(6px)}15%{opacity:.32}75%{opacity:.32}100%{opacity:0;transform:translateY(-4px)}}
+.hero-inner{position:relative;z-index:1}
+.stagelogo{position:relative;width:168px;height:168px;margin:0 auto 18px}
+.stagelogo svg{position:absolute;inset:0;width:100%;height:100%}
+/* Die Lale erblüht: Stiel zeichnet sich, Blätter öffnen sich, dann Gold. */
+.stagelogo .sl{animation:stiel .7s ease-out both}
+.stagelogo .bl,.stagelogo .br,.stagelogo .mi{transform-origin:64px 84px;animation:bluete .9s cubic-bezier(.2,.8,.2,1) both}
+.stagelogo .bl{animation-delay:.55s;--r:-18deg}
+.stagelogo .br{animation-delay:.55s;--r:18deg}
+.stagelogo .mi{animation-delay:.75s}
+.stagelogo .si{transform-origin:55px 114px;animation:bluete .6s 1.05s cubic-bezier(.2,.8,.2,1) both}
+.stagelogo .st{animation:strich .45s 1.45s ease-out both}
+@keyframes stiel{from{stroke-dasharray:60;stroke-dashoffset:60}to{stroke-dasharray:60;stroke-dashoffset:0}}
+@keyframes strich{from{stroke-dasharray:30;stroke-dashoffset:30}to{stroke-dasharray:30;stroke-dashoffset:0}}
+@keyframes bluete{from{opacity:0;transform:scale(.25) rotate(var(--r,0deg))}to{opacity:1;transform:none}}
+.halo{position:absolute;inset:-40px;border-radius:50%;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 12%,transparent),transparent);
+  filter:blur(8px);animation:auf 1.2s .4s both}
+.kicker{display:inline-block;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+h1{font-size:clamp(2.1rem,5.5vw,3.8rem);line-height:1.08;margin:.2rem 0 1rem;letter-spacing:-.02em}
+h1 .grad{color:var(--accent)}
+.lead{max-width:620px;margin:0 auto 1.8rem;color:var(--muted);font-size:1.12rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.25rem;border-radius:.8rem;
+  font-weight:650;text-decoration:none;border:1px solid var(--line);color:var(--fg);background:var(--card);
+  transition:border-color .2s}
+.btn:hover{border-color:var(--accent)}
+.btn.pri{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.ctas{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
+
+/* Abschnitte */
+section.blk{padding:90px 0;border-top:1px solid var(--line)}
+.sechead{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
+.sechead h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0;letter-spacing:-.01em}
+.sechead .mono{color:var(--muted);font-size:.85rem}
+.js .reveal{opacity:0;transition:opacity .9s}
+.js .reveal.in{opacity:1}
+
+/* Apps: eine App = Bühne mit Handy */
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:1.3rem;
+  padding:42px;overflow:hidden;transition:border-color .3s}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent) 8%,transparent),transparent 60%)}
+.card:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.card:hover::before{opacity:1}
+.card.main{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;margin-bottom:20px}
+@media (max-width:820px){ .card.main{grid-template-columns:1fr;padding:26px} }
+.apphead{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.appicon{width:56px;height:56px;flex:none}
+.appicon svg{display:block;border-radius:15px}
+.apphead h3{margin:0;font-size:1.35rem}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:.18rem .55rem;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);
+  color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.card p{color:var(--muted);margin:.4rem 0 1rem}
+.feats{list-style:none;padding:0;margin:0 0 1.2rem;display:grid;gap:.45rem}
+.feats li{display:flex;gap:.55rem;align-items:center;font-size:.95rem}
+.feats li::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--accent);transform:rotate(45deg);flex:none}
+.links{display:flex;gap:.5rem;flex-wrap:wrap}
+.links .btn{padding:.55rem .9rem;font-size:.9rem;border-radius:.65rem}
+.phonewrap{display:grid;place-items:center;perspective:900px}
+.phone{width:240px;height:480px;border-radius:38px;background:#050607;border:1px solid #2a2d33;padding:12px;
+  box-shadow:0 30px 70px -40px color-mix(in srgb,var(--accent) 40%,transparent),inset 0 0 0 2px #15171a;
+  transform:rotateY(-8deg) rotateX(3deg)}
+.screen{height:100%;border-radius:28px;background:linear-gradient(180deg,#0e2a22,#0a0f0d 55%);overflow:hidden;
+  padding:34px 18px 18px;color:#e8eaed;position:relative}
+.screen .notch{position:absolute;top:10px;left:50%;width:70px;height:20px;border-radius:12px;background:#000;transform:translateX(-50%)}
+.screen .city{font-size:.72rem;color:#9aa1ac;text-align:center}
+.screen .next{text-align:center;margin:18px 0 6px;font-size:.78rem;color:#35c79a;letter-spacing:.12em;text-transform:uppercase}
+.screen .cd{text-align:center;font-size:2.15rem;font-weight:700;letter-spacing:.02em}
+.screen .ring{width:120px;height:120px;margin:12px auto 18px;border-radius:50%;
+  background:conic-gradient(#35c79a var(--p,65%),rgba(255,255,255,.08) 0);display:grid;place-items:center}
+.screen .ring::after{content:"";width:104px;height:104px;border-radius:50%;background:#0c1512}
+.rows{display:grid;gap:7px;margin-top:14px}
+.rows div{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;padding:7px 10px;border-radius:9px;background:rgba(255,255,255,.04)}
+.rows div.now{background:rgba(53,199,154,.16);color:#35c79a;font-weight:700}
+.rows i{display:block;width:34px;height:7px;border-radius:4px;background:rgba(255,255,255,.18)}
+.rows div.now i{background:rgba(53,199,154,.55)}
+.deko{font-size:.7rem;color:var(--muted);text-align:center;margin-top:10px}
+
+/* Arbeitsweise */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:820px){ .tiles{grid-template-columns:1fr} }
+.tile{background:var(--card);border:1px solid var(--line);border-radius:1.1rem;padding:24px}
+.tile svg{width:42px;height:42px;margin-bottom:12px}
+.tile svg *{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.tile h3{margin:.1rem 0 .4rem;font-size:1.08rem}
+.tile p{margin:0;color:var(--muted);font-size:.95rem}
+.codeline{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:18px 22px;
+  font-size:.9rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
+.codeline .k{color:var(--gold)} .codeline .v{color:var(--accent)}
+
+/* Kontakt + Fuß */
+.contact{text-align:center}
+.contact .big{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;margin:.2rem 0}
+.contact .muted{color:var(--muted)}
+.contact .mail{margin-top:1.2rem}
+.contact .mail a,.contact .mail .rv{display:inline-block;padding:.8rem 1.25rem;border-radius:.8rem;
+  font-weight:650;text-decoration:none;background:var(--accent);color:var(--bg)}
+footer.site{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);font-size:.85rem}
+.fuss{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+.fbrand{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.fbrand a{color:var(--muted)}
+footer.site .gold{color:var(--gold)}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  html{scroll-behavior:auto}
 }
 </style>
+<script>document.documentElement.className='js'</script>
 </head>
 <body>
 <span data-doctitle="TULPIKS" data-lang="en" hidden></span>
+<a class="skip" href="#apps" data-lang="en">Skip to content</a>
 <span data-doctitle="TULPIKS" data-lang="de" hidden></span>
+<a class="skip" href="#apps" data-lang="de" hidden>Zum Inhalt springen</a>
 <span data-doctitle="TULPIKS" data-lang="tr" hidden></span>
-<a class="skip" href="#inhalt" data-lang="en">Skip to content</a>
-<a class="skip" href="#inhalt" data-lang="de">Zum Inhalt springen</a>
-<a class="skip" href="#inhalt" data-lang="tr">İçeriğe geç</a>
-<div class="wrap">
-  <header>
-    <a class="marke" href="/">
-      <span><b>TULPIKS</b></span>
-    </a>
-    <div class="langs" role="tablist" aria-label="Language">
-      <button type="button" role="tab" data-setlang="en" aria-selected="true">English</button>
-      <button type="button" role="tab" data-setlang="de" aria-selected="false">Deutsch</button>
-      <button type="button" role="tab" data-setlang="tr" aria-selected="false">Türkçe</button>
+<a class="skip" href="#apps" data-lang="tr" hidden>İçeriğe geç</a>
+<header class="top"><div class="wrap">
+ <a class="brand" href="/"><svg class="lg" viewBox="0 0 128 128" width="34" height="34" aria-hidden="true"><path class="fa2 bl" d="M64 82C45 78 35 62 37 42C37 33 33 27 26 22C43 23 54 37 59 56Z"/><path class="fa2 br" d="M64 82C83 78 93 62 91 42C91 33 95 27 102 22C85 23 74 37 69 56Z"/><path class="fa sep mi" d="M64 10C76 28 79 52 64 84C49 52 52 28 64 10Z"/><path class="st" d="M61 62 67 36"/><path class="s sl" d="M64 84C64 98 59 110 50 122"/><path class="fg si" d="M55 112C73 106 89 94 99 72C94 100 77 113 55 117Z"/></svg><span class="wordmark">TULPIKS</span></a>
+ <nav class="navl" aria-label="Site">
+  <span data-lang="en"><a href="#apps">Apps</a><a href="#prinzip">How we work</a><a href="#kontakt">Contact</a></span>
+  <span data-lang="de" hidden><a href="#apps">Apps</a><a href="#prinzip">Wie wir arbeiten</a><a href="#kontakt">Kontakt</a></span>
+  <span data-lang="tr" hidden><a href="#apps">Uygulamalar</a><a href="#prinzip">Nasıl çalışıyoruz</a><a href="#kontakt">İletişim</a></span>
+  <span class="langs" role="tablist" aria-label="Language">
+   <button type="button" role="tab" data-setlang="en" aria-selected="true">EN</button>
+   <button type="button" role="tab" data-setlang="de" aria-selected="false">DE</button>
+   <button type="button" role="tab" data-setlang="tr" aria-selected="false">TR</button>
+  </span>
+ </nav>
+</div></header>
+<section class="hero">
+ <div class="garden" id="garden"></div>
+ <div class="hero-inner wrap">
+  <div class="stagelogo"><div class="halo"></div><svg class="lg" viewBox="0 0 128 128" width="168" height="168" role="img" aria-label="TULPIKS"><path class="fa2 bl" d="M64 82C45 78 35 62 37 42C37 33 33 27 26 22C43 23 54 37 59 56Z"/><path class="fa2 br" d="M64 82C83 78 93 62 91 42C91 33 95 27 102 22C85 23 74 37 69 56Z"/><path class="fa sep mi" d="M64 10C76 28 79 52 64 84C49 52 52 28 64 10Z"/><path class="st" d="M61 62 67 36"/><path class="s sl" d="M64 84C64 98 59 110 50 122"/><path class="fg si" d="M55 112C73 106 89 94 99 72C94 100 77 113 55 117Z"/></svg></div>
+  <div data-lang="en">
+   <div class="kicker">App studio · code that blossoms</div>
+   <h1>Apps you can <br><span class="grad">rely on.</span></h1>
+   <p class="lead">We build apps that genuinely help in everyday life — with fresh ideas, thought through to the last detail, and built to be relied on.</p>
+   <div class="ctas"><a class="btn pri" href="#apps">Our apps →</a><a class="btn" href="#prinzip">How we work</a></div>
+  </div>
+  <div data-lang="de" hidden>
+   <div class="kicker">App-Studio · Code, der aufblüht</div>
+   <h1>Apps, auf die man sich <br><span class="grad">verlassen kann.</span></h1>
+   <p class="lead">Wir entwickeln Apps, die im Alltag wirklich helfen — mit neuen Ideen, durchdacht bis ins Detail und gebaut, um sich darauf zu verlassen.</p>
+   <div class="ctas"><a class="btn pri" href="#apps">Unsere Apps →</a><a class="btn" href="#prinzip">Wie wir arbeiten</a></div>
+  </div>
+  <div data-lang="tr" hidden>
+   <div class="kicker">Uygulama stüdyosu · çiçek açan kod</div>
+   <h1><span class="grad">Güvenebileceğiniz</span> uygulamalar.</h1>
+   <p class="lead">Günlük hayatta gerçekten işe yarayan uygulamalar geliştiriyoruz — yeni fikirlerle, en ince ayrıntısına kadar düşünülmüş ve güvenilir.</p>
+   <div class="ctas"><a class="btn pri" href="#apps">Uygulamalarımız →</a><a class="btn" href="#prinzip">Nasıl çalışıyoruz</a></div>
+  </div>
+ </div>
+</section>
+<section class="blk apps" id="apps"><div class="wrap">
+ <div data-lang="en">
+  <div class="sechead reveal"><h2>Our apps</h2><span class="mono">// 1 app · more are growing</span></div>
+  <article class="card main reveal">
+   <div>
+    <div class="apphead">
+     <div class="appicon"><svg viewBox="0 0 128 128" width="56" height="56" role="img" aria-label="Vakitkar" focusable="false"><rect width="128" height="128" rx="28" fill="#1fa37c"/><polygon points="64,26 104,49 64,72 24,49" fill="#333333"/><polygon points="24,49 64,72 64,118 24,95" fill="#0b0b0b"/><polygon points="104,49 64,72 64,118 104,95" fill="#1b1b1b"/><polygon points="24,63 64,86 64,91 24,68" fill="#e7c46b"/><polygon points="104,63 64,86 64,91 104,68" fill="#e7c46b"/><polygon points="64,96 78,88 78,109 64,117" fill="#e7c46b"/></svg></div>
+     <div><h3>Vakitkar</h3><span class="pill">Coming soon to Google Play</span></div>
     </div>
-  </header>
-  <nav aria-label="Site">
-    <a href="/" aria-current="page" data-lang="en">TULPIKS</a>
-    <a href="/" aria-current="page" data-lang="de">TULPIKS</a>
-    <a href="/" aria-current="page" data-lang="tr">TULPIKS</a>
-    <a href="/vakitkar/" data-lang="en">Privacy</a>
-    <a href="/vakitkar/" data-lang="de">Datenschutz</a>
-    <a href="/vakitkar/" data-lang="tr">Gizlilik</a>
-    <a href="/vakitkar/support/" data-lang="en">Support</a>
-    <a href="/vakitkar/support/" data-lang="de">Hilfe</a>
-    <a href="/vakitkar/support/" data-lang="tr">Destek</a>
-  </nav>
-  <main id="inhalt">
-  <section data-lang="en">
-<h1>TULPIKS</h1>
-<p>We build apps that genuinely help in everyday life — with fresh ideas, thought through to the last detail, and built to be relied on.</p>
-<h2 id="en-vakitkar">Vakitkar</h2>
-<p>Prayer times, Qibla direction and Adhan reminders for Muslims — no ads, no tracking, no account required.</p>
-<ul>
-<li><strong>Privacy:</strong> <a href="https://tulpiks.com/vakitkar/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/</a></li>
-<li><strong>Support:</strong> <a href="https://tulpiks.com/vakitkar/support/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/support/</a></li>
-</ul>
-<h2 id="en-contact">Contact</h2>
-<p>TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span></p>
-  </section>
-  <section data-lang="de" hidden>
-<h1>TULPIKS</h1>
-<p>Wir entwickeln Apps, die im Alltag wirklich helfen — mit neuen Ideen, durchdacht bis ins Detail und verlässlich.</p>
-<h2 id="de-vakitkar">Vakitkar</h2>
-<p>Gebetszeiten, Qibla-Richtung und Adhan-Erinnerung für Muslime — ohne Werbung, ohne Tracking, ohne Konto.</p>
-<ul>
-<li><strong>Datenschutz:</strong> <a href="https://tulpiks.com/vakitkar/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/</a></li>
-<li><strong>Hilfe &amp; Kontakt:</strong> <a href="https://tulpiks.com/vakitkar/support/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/support/</a></li>
-</ul>
-<h2 id="de-kontakt">Kontakt</h2>
-<p>TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span></p>
-  </section>
-  <section data-lang="tr" hidden>
-<h1>TULPIKS</h1>
-<p>Günlük hayatta gerçekten işe yarayan uygulamalar geliştiriyoruz — yeni fikirlerle, en ince ayrıntısına kadar düşünülmüş ve güvenilir.</p>
-<h2 id="tr-vakitkar">Vakitkar</h2>
-<p>Müslümanlar için namaz vakitleri, kıble yönü ve ezan hatırlatıcısı — reklamsız, takipsiz, hesap gerektirmeden.</p>
-<ul>
-<li><strong>Gizlilik:</strong> <a href="https://tulpiks.com/vakitkar/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/</a></li>
-<li><strong>Destek:</strong> <a href="https://tulpiks.com/vakitkar/support/" rel="noopener noreferrer">https://tulpiks.com/vakitkar/support/</a></li>
-</ul>
-<h2 id="tr-iletişim">İletişim</h2>
-<p>TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span></p>
-  </section>
-  </main>
-  <footer>
-    <p data-lang="en">TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span><br><span class="gold">This page loads no fonts, scripts or images from third parties. No cookies, no tracking.</span></p>
-    <p data-lang="de">TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span><br><span class="gold">Diese Seite lädt keine Schriften, Skripte oder Bilder von Dritten. Keine Cookies, kein Tracking.</span></p>
-    <p data-lang="tr">TULPIKS · <span class="rv" data-mail>moc.skiplut@troppus</span><br><span class="gold">Bu sayfa üçüncü taraflardan yazı tipi, betik veya görsel yüklemez. Çerez yok, izleme yok.</span></p>
-  </footer>
-</div>
+    <p>Prayer times, Qibla direction and Adhan reminders for Muslims, in English, German, Turkish and more.</p>
+    <ul class="feats">
+     <li>No ads, no tracking, no account</li>
+     <li>Adhan on time, even after a restart</li>
+     <li>Works offline</li>
+    </ul>
+    <div class="links">
+     <a class="btn" href="https://tulpiks.com/vakitkar/">Privacy</a>
+     <a class="btn" href="https://tulpiks.com/vakitkar/support/">Support</a>
+    </div>
+   </div>
+   <div class="phonewrap" aria-hidden="true"><div>
+    <div class="phone"><div class="screen">
+     <div class="notch"></div>
+     <div class="city">Vakitkar</div>
+     <div class="next">Next prayer · Asr</div>
+     <div class="ring"></div>
+     <div class="cd mono">01:23:45</div>
+     <div class="rows">
+      <div>Fajr<i></i></div>
+      <div>Sunrise<i></i></div>
+      <div>Dhuhr<i></i></div>
+      <div class="now">Asr<i></i></div>
+      <div>Maghrib<i></i></div>
+      <div>Isha<i></i></div>
+     </div>
+    </div></div>
+    <div class="deko">Illustration, not real times</div>
+   </div></div>
+  </article>
+ </div>
+ <div data-lang="de" hidden>
+  <div class="sechead reveal"><h2>Unsere Apps</h2><span class="mono">// 1 App · weitere wachsen</span></div>
+  <article class="card main reveal">
+   <div>
+    <div class="apphead">
+     <div class="appicon"><svg viewBox="0 0 128 128" width="56" height="56" role="img" aria-label="Vakitkar" focusable="false"><rect width="128" height="128" rx="28" fill="#1fa37c"/><polygon points="64,26 104,49 64,72 24,49" fill="#333333"/><polygon points="24,49 64,72 64,118 24,95" fill="#0b0b0b"/><polygon points="104,49 64,72 64,118 104,95" fill="#1b1b1b"/><polygon points="24,63 64,86 64,91 24,68" fill="#e7c46b"/><polygon points="104,63 64,86 64,91 104,68" fill="#e7c46b"/><polygon points="64,96 78,88 78,109 64,117" fill="#e7c46b"/></svg></div>
+     <div><h3>Vakitkar</h3><span class="pill">Bald im Play Store</span></div>
+    </div>
+    <p>Gebetszeiten, Qibla-Richtung und Adhan-Erinnerung für Muslime, in Deutsch, Türkisch, Englisch und mehr.</p>
+    <ul class="feats">
+     <li>Ohne Werbung, ohne Tracking, ohne Konto</li>
+     <li>Adhan pünktlich, auch nach Neustart</li>
+     <li>Funktioniert offline</li>
+    </ul>
+    <div class="links">
+     <a class="btn" href="https://tulpiks.com/vakitkar/">Datenschutz</a>
+     <a class="btn" href="https://tulpiks.com/vakitkar/support/">Hilfe &amp; Kontakt</a>
+    </div>
+   </div>
+   <div class="phonewrap" aria-hidden="true"><div>
+    <div class="phone"><div class="screen">
+     <div class="notch"></div>
+     <div class="city">Vakitkar</div>
+     <div class="next">Nächstes Gebet · Asr</div>
+     <div class="ring"></div>
+     <div class="cd mono">01:23:45</div>
+     <div class="rows">
+      <div>Fajr<i></i></div>
+      <div>Sonnenaufgang<i></i></div>
+      <div>Dhuhr<i></i></div>
+      <div class="now">Asr<i></i></div>
+      <div>Maghrib<i></i></div>
+      <div>Isha<i></i></div>
+     </div>
+    </div></div>
+    <div class="deko">Illustration, keine echten Zeiten</div>
+   </div></div>
+  </article>
+ </div>
+ <div data-lang="tr" hidden>
+  <div class="sechead reveal"><h2>Uygulamalarımız</h2><span class="mono">// 1 uygulama · yenileri yolda</span></div>
+  <article class="card main reveal">
+   <div>
+    <div class="apphead">
+     <div class="appicon"><svg viewBox="0 0 128 128" width="56" height="56" role="img" aria-label="Vakitkar" focusable="false"><rect width="128" height="128" rx="28" fill="#1fa37c"/><polygon points="64,26 104,49 64,72 24,49" fill="#333333"/><polygon points="24,49 64,72 64,118 24,95" fill="#0b0b0b"/><polygon points="104,49 64,72 64,118 104,95" fill="#1b1b1b"/><polygon points="24,63 64,86 64,91 24,68" fill="#e7c46b"/><polygon points="104,63 64,86 64,91 104,68" fill="#e7c46b"/><polygon points="64,96 78,88 78,109 64,117" fill="#e7c46b"/></svg></div>
+     <div><h3>Vakitkar</h3><span class="pill">Yakında Google Play’de</span></div>
+    </div>
+    <p>Müslümanlar için namaz vakitleri, kıble yönü ve ezan hatırlatıcısı; Türkçe, Almanca, İngilizce ve daha fazla dilde.</p>
+    <ul class="feats">
+     <li>Reklamsız, takipsiz, hesap gerektirmeden</li>
+     <li>Yeniden başlatmadan sonra da ezan vaktinde</li>
+     <li>İnternetsiz çalışır</li>
+    </ul>
+    <div class="links">
+     <a class="btn" href="https://tulpiks.com/vakitkar/">Gizlilik</a>
+     <a class="btn" href="https://tulpiks.com/vakitkar/support/">Destek</a>
+    </div>
+   </div>
+   <div class="phonewrap" aria-hidden="true"><div>
+    <div class="phone"><div class="screen">
+     <div class="notch"></div>
+     <div class="city">Vakitkar</div>
+     <div class="next">Sıradaki vakit · İkindi</div>
+     <div class="ring"></div>
+     <div class="cd mono">01:23:45</div>
+     <div class="rows">
+      <div>İmsak<i></i></div>
+      <div>Güneş<i></i></div>
+      <div>Öğle<i></i></div>
+      <div class="now">İkindi<i></i></div>
+      <div>Akşam<i></i></div>
+      <div>Yatsı<i></i></div>
+     </div>
+    </div></div>
+    <div class="deko">Temsilî görsel, gerçek vakitler değildir</div>
+   </div></div>
+  </article>
+ </div>
+</div></section>
+<section class="blk" id="prinzip"><div class="wrap">
+ <div data-lang="en">
+  <div class="sechead reveal"><h2>How we work</h2><span class="mono">// applies to every app we make</span></div>
+  <div class="tiles">
+   <div class="tile reveal"><svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="14"/><path d="M21 12v9l6 4"/></svg><h3>Care before speed</h3><p>An app ships only when it is right. What it promises, we back with tests instead of hoping.</p></div>
+   <div class="tile reveal"><svg viewBox="0 0 42 42" aria-hidden="true"><rect x="10" y="19" width="22" height="16" rx="3"/><path d="M15 19v-5a6 6 0 0 1 12 0v5"/></svg><h3>Respect for your data</h3><p>We collect only what an app really needs and say openly what for. This page itself loads nothing from third parties.</p></div>
+   <div class="tile reveal"><svg viewBox="0 0 42 42" aria-hidden="true"><path d="M8 12h26v16H18l-7 6v-6H8Z"/></svg><h3>Personally reachable</h3><p>Questions and feedback go straight to the people who build the app, not to a call centre.</p></div>
+  </div>
+  <div class="codeline mono reveal"><span class="k">const</span> tulpiks = { care: <span class="v">Infinity</span>, data: <span class="v">"only what is needed"</span>, feedback: <span class="v">"welcome"</span> };</div>
+ </div>
+ <div data-lang="de" hidden>
+  <div class="sechead reveal"><h2>Wie wir arbeiten</h2><span class="mono">// gilt für jede unserer Apps</span></div>
+  <div class="tiles">
+   <div class="tile reveal"><svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="14"/><path d="M21 12v9l6 4"/></svg><h3>Sorgfalt vor Tempo</h3><p>Eine App erscheint erst, wenn sie stimmt. Was sie verspricht, sichern wir mit Tests ab, statt zu hoffen.</p></div>
+   <div class="tile reveal"><svg viewBox="0 0 42 42" aria-hidden="true"><rect x="10" y="19" width="22" height="16" rx="3"/><path d="M15 19v-5a6 6 0 0 1 12 0v5"/></svg><h3>Respekt vor deinen Daten</h3><p>Wir erheben nur, was eine App wirklich braucht, und sagen offen, wofür. Diese Seite selbst lädt nichts von Dritten.</p></div>
+   <div class="tile reveal"><svg viewBox="0 0 42 42" aria-hidden="true"><path d="M8 12h26v16H18l-7 6v-6H8Z"/></svg><h3>Persönlich erreichbar</h3><p>Fragen und Feedback landen direkt bei den Menschen, die die App bauen, nicht in einem Callcenter.</p></div>
+  </div>
+  <div class="codeline mono reveal"><span class="k">const</span> tulpiks = { sorgfalt: <span class="v">Infinity</span>, daten: <span class="v">"nur das Nötige"</span>, feedback: <span class="v">"willkommen"</span> };</div>
+ </div>
+ <div data-lang="tr" hidden>
+  <div class="sechead reveal"><h2>Nasıl çalışıyoruz</h2><span class="mono">// tüm uygulamalarımız için geçerli</span></div>
+  <div class="tiles">
+   <div class="tile reveal"><svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="14"/><path d="M21 12v9l6 4"/></svg><h3>Önce özen, sonra hız</h3><p>Bir uygulama ancak doğru olduğunda yayınlanır. Vaat ettiğini umut ederek değil, testlerle güvenceye alırız.</p></div>
+   <div class="tile reveal"><svg viewBox="0 0 42 42" aria-hidden="true"><rect x="10" y="19" width="22" height="16" rx="3"/><path d="M15 19v-5a6 6 0 0 1 12 0v5"/></svg><h3>Verilerinize saygı</h3><p>Yalnızca bir uygulamanın gerçekten ihtiyaç duyduğu veriyi toplar, ne için olduğunu açıkça söyleriz. Bu sayfa da üçüncü taraflardan hiçbir şey yüklemez.</p></div>
+   <div class="tile reveal"><svg viewBox="0 0 42 42" aria-hidden="true"><path d="M8 12h26v16H18l-7 6v-6H8Z"/></svg><h3>Doğrudan ulaşılabilir</h3><p>Sorular ve geri bildirimler bir çağrı merkezine değil, doğrudan uygulamayı geliştiren insanlara ulaşır.</p></div>
+  </div>
+  <div class="codeline mono reveal"><span class="k">const</span> tulpiks = { özen: <span class="v">Infinity</span>, veri: <span class="v">"yalnızca gerekli olan"</span>, geriBildirim: <span class="v">"her zaman"</span> };</div>
+ </div>
+</div></section>
+<section class="blk contact" id="kontakt"><div class="wrap">
+ <div class="reveal" data-lang="en">
+  <div class="kicker">Contact</div>
+  <p class="big">Questions, ideas, feedback?</p>
+  <p class="muted">Write to us. We read every message ourselves.</p>
+  <p class="mail"><span class="rv" data-mail>moc.skiplut@troppus</span></p>
+ </div>
+ <div class="reveal" data-lang="de" hidden>
+  <div class="kicker">Kontakt</div>
+  <p class="big">Fragen, Ideen, Feedback?</p>
+  <p class="muted">Schreib uns. Wir lesen jede Nachricht selbst.</p>
+  <p class="mail"><span class="rv" data-mail>moc.skiplut@troppus</span></p>
+ </div>
+ <div class="reveal" data-lang="tr" hidden>
+  <div class="kicker">İletişim</div>
+  <p class="big">Sorular, fikirler, geri bildirim?</p>
+  <p class="muted">Bize yazın. Her mesajı kendimiz okuyoruz.</p>
+  <p class="mail"><span class="rv" data-mail>moc.skiplut@troppus</span></p>
+ </div>
+</div></section>
+<footer class="site"><div class="wrap">
+ <div class="fuss" data-lang="en"><span class="fbrand"><svg class="lg" viewBox="0 0 128 128" width="22" height="22" aria-hidden="true"><path class="fa2 bl" d="M64 82C45 78 35 62 37 42C37 33 33 27 26 22C43 23 54 37 59 56Z"/><path class="fa2 br" d="M64 82C83 78 93 62 91 42C91 33 95 27 102 22C85 23 74 37 69 56Z"/><path class="fa sep mi" d="M64 10C76 28 79 52 64 84C49 52 52 28 64 10Z"/><path class="st" d="M61 62 67 36"/><path class="s sl" d="M64 84C64 98 59 110 50 122"/><path class="fg si" d="M55 112C73 106 89 94 99 72C94 100 77 113 55 117Z"/></svg> TULPIKS · <a href="/vakitkar/">Privacy</a> · <a href="/vakitkar/support/">Support</a></span><span class="gold">This page loads no fonts, scripts or images from third parties. No cookies, no tracking.</span></div>
+ <div class="fuss" data-lang="de" hidden><span class="fbrand"><svg class="lg" viewBox="0 0 128 128" width="22" height="22" aria-hidden="true"><path class="fa2 bl" d="M64 82C45 78 35 62 37 42C37 33 33 27 26 22C43 23 54 37 59 56Z"/><path class="fa2 br" d="M64 82C83 78 93 62 91 42C91 33 95 27 102 22C85 23 74 37 69 56Z"/><path class="fa sep mi" d="M64 10C76 28 79 52 64 84C49 52 52 28 64 10Z"/><path class="st" d="M61 62 67 36"/><path class="s sl" d="M64 84C64 98 59 110 50 122"/><path class="fg si" d="M55 112C73 106 89 94 99 72C94 100 77 113 55 117Z"/></svg> TULPIKS · <a href="/vakitkar/">Datenschutz</a> · <a href="/vakitkar/support/">Hilfe</a></span><span class="gold">Diese Seite lädt keine Schriften, Skripte oder Bilder von Dritten. Keine Cookies, kein Tracking.</span></div>
+ <div class="fuss" data-lang="tr" hidden><span class="fbrand"><svg class="lg" viewBox="0 0 128 128" width="22" height="22" aria-hidden="true"><path class="fa2 bl" d="M64 82C45 78 35 62 37 42C37 33 33 27 26 22C43 23 54 37 59 56Z"/><path class="fa2 br" d="M64 82C83 78 93 62 91 42C91 33 95 27 102 22C85 23 74 37 69 56Z"/><path class="fa sep mi" d="M64 10C76 28 79 52 64 84C49 52 52 28 64 10Z"/><path class="st" d="M61 62 67 36"/><path class="s sl" d="M64 84C64 98 59 110 50 122"/><path class="fg si" d="M55 112C73 106 89 94 99 72C94 100 77 113 55 117Z"/></svg> TULPIKS · <a href="/vakitkar/">Gizlilik</a> · <a href="/vakitkar/support/">Destek</a></span><span class="gold">Bu sayfa üçüncü taraflardan yazı tipi, betik veya görsel yüklemez. Çerez yok, izleme yok.</span></div>
+</div></footer>
 <script>(function(){
   var LANGS=['en','de','tr'];
   function show(l){
@@ -170,6 +422,60 @@ footer .gold{color:var(--gold);}
   var gespeichert=null;
   try{ gespeichert=localStorage.getItem('lang'); }catch(e){}
   show(gespeichert || (navigator.language||'en').slice(0,2));
+})();
+</script>
+<script>(function(){
+  var ruhig = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Abschnitte einblenden (ohne Skript sind sie von vornherein sichtbar).
+  var teile = document.querySelectorAll('.reveal');
+  if (ruhig || !('IntersectionObserver' in window)) {
+    teile.forEach(function(e){ e.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12});
+    teile.forEach(function(e){ io.observe(e); });
+  }
+
+  // Garten: der Spross keimt an zufälligen Rasterpunkten, nie hinter der Lale.
+  var garden = document.getElementById('garden');
+  var SPR = '<path d="M44 30 28 58 64 92"/><path d="M84 30 100 58 64 92"/><path d="M64 92 56 120"/><rect x="51" y="31" width="26" height="26" rx="7" transform="rotate(45 64 44)"/><path class="lf" d="M59 112Q70 96 92 97Q80 113 59 112Z"/>';
+  function setze(x, y, still){
+    var el = document.createElement('div');
+    el.className = 'sprout' + (still ? ' still' : '');
+    el.style.left = x + 'px'; el.style.top = y + 'px';
+    el.innerHTML = '<svg viewBox="0 0 128 128" width="44" height="44" aria-hidden="true">' + SPR + '</svg>';
+    garden.appendChild(el); return el;
+  }
+  if (ruhig) {
+    var r = garden.getBoundingClientRect();
+    [[.18,.3],[.8,.62],[.12,.75]].forEach(function(p){ setze(p[0]*r.width, p[1]*r.height, true); });
+  } else {
+    setInterval(function(){
+      if (document.hidden) return;
+      var r = garden.getBoundingClientRect(), g = 28;
+      var x = Math.floor(Math.random()*(r.width/g))*g - 22, y = Math.floor(Math.random()*(r.height/g))*g - 36;
+      var cx = x/r.width - .5, cy = y/r.height - .45; if (cx*cx + cy*cy < 0.02) return;
+      var el = setze(x, y, false); setTimeout(function(){ el.remove(); }, 7200);
+    }, 2600);
+  }
+
+  // Countdown auf dem Deko-Handy (keine echten Zeiten).
+  var t = 5025;
+  function tick(){
+    t = t > 0 ? t - 1 : 5025;
+    var txt = [Math.floor(t/3600), Math.floor(t/60)%60, t%60].map(function(n){ return String(n).padStart(2,'0'); }).join(':');
+    document.querySelectorAll('.cd').forEach(function(e){ e.textContent = txt; });
+    document.querySelectorAll('.ring').forEach(function(e){ e.style.setProperty('--p', (100 - t/5025*35) + '%'); });
+  }
+  tick(); if (!ruhig) setInterval(tick, 1000);
+
+  // Lichtkegel auf den Karten.
+  document.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('mousemove', function(e){ var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left)/r.width*100 + '%');
+      c.style.setProperty('--my', (e.clientY - r.top)/r.height*100 + '%'); });
+  });
 })();
 </script>
 </body>
