@@ -130,8 +130,8 @@ section.blk{padding:90px 0;border-top:1px solid var(--line)}
   color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
 .card p{color:var(--muted);margin:.4rem 0 1rem}
 .feats{list-style:none;padding:0;margin:0 0 1.2rem;display:grid;gap:.45rem}
-.feats li{display:flex;gap:.55rem;align-items:center;font-size:.95rem}
-.feats li::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--accent);transform:rotate(45deg);flex:none}
+.feats li{display:flex;gap:.55rem;align-items:flex-start;font-size:.95rem}
+.feats li::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--accent);transform:rotate(45deg);flex:none;margin-top:calc(.8em - 3.5px)}
 .links{display:flex;gap:.5rem;flex-wrap:wrap}
 .links .btn{padding:.55rem .9rem;font-size:.9rem;border-radius:.65rem}
 .phonewrap{display:grid;place-items:center;perspective:900px}
@@ -219,7 +219,7 @@ footer.site .gold{color:var(--gold)}
   <div data-lang="de" hidden>
    <div class="kicker">App-Studio · Code, der aufblüht</div>
    <h1>Apps, auf die man sich <br><span class="grad">verlassen kann.</span></h1>
-   <p class="lead">Wir entwickeln Apps, die im Alltag wirklich helfen — mit neuen Ideen, durchdacht bis ins Detail und gebaut, um sich darauf zu verlassen.</p>
+   <p class="lead">Wir entwickeln Apps, die im Alltag wirklich helfen — mit neuen Ideen, durchdacht bis ins Detail und so gebaut, dass man sich darauf verlassen kann.</p>
    <div class="ctas"><a class="btn pri" href="#apps">Unsere Apps →</a><a class="btn" href="#prinzip">Wie wir arbeiten</a></div>
   </div>
   <div data-lang="tr" hidden>
@@ -319,9 +319,9 @@ footer.site .gold{color:var(--gold)}
     </div>
     <p>Müslümanlar için namaz vakitleri, kıble yönü ve ezan hatırlatıcısı; Türkçe, Almanca, İngilizce ve daha fazla dilde.</p>
     <ul class="feats">
-     <li>Reklamsız, takipsiz, hesap gerektirmeden</li>
-     <li>Yeniden başlatmadan sonra da ezan vaktinde</li>
-     <li>İnternetsiz çalışır</li>
+     <li>Reklam ve izleme yok, hesap gerekmez</li>
+     <li>Telefon yeniden başlasa bile ezan vaktinde</li>
+     <li>İnternet olmadan da çalışır</li>
     </ul>
     <div class="links">
      <a class="btn" href="https://tulpiks.com/vakitkar/">Gizlilik</a>
@@ -393,7 +393,7 @@ footer.site .gold{color:var(--gold)}
  </div>
  <div class="reveal" data-lang="tr" hidden>
   <div class="kicker">İletişim</div>
-  <p class="big">Sorular, fikirler, geri bildirim?</p>
+  <p class="big">Sorunuz, fikriniz ya da öneriniz mi var?</p>
   <p class="muted">Bize yazın. Her mesajı kendimiz okuyoruz.</p>
   <p class="mail"><span class="rv" data-mail>moc.skiplut@troppus</span></p>
  </div>
