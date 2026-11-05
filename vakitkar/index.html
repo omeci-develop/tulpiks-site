@@ -114,7 +114,7 @@ footer .gold{color:var(--gold);}
       <li><a href="#en-11-contact">11. Contact</a></li>
     </ol></div>
 <h1>Privacy Policy — Vakitkar</h1>
-<p><strong>Effective date:</strong> 23 October 2026 · <strong>Version:</strong> 1.11</p>
+<p><strong>Effective date:</strong> 5 November 2026 · <strong>Version:</strong> 1.12</p>
 <h2 id="en-1-who-is-responsible">1. Who is responsible</h2>
 <p>This app (&quot;Vakitkar&quot;, &quot;the app&quot;) is published by <strong>TULPIKS</strong>, owner <span class="rv">iceM namsO</span> (sole proprietor; &quot;we&quot;/&quot;us&quot;), the data controller within the meaning of the EU General Data Protection Regulation (GDPR).</p>
 <ul>
@@ -123,14 +123,14 @@ footer .gold{color:var(--gold);}
 </ul>
 <p>If you have any question about this policy or your data, email us at the address above.</p>
 <h2 id="en-2-our-privacy-promise-in-one-paragraph">2. Our privacy promise in one paragraph</h2>
-<p>Vakitkar is built to work <strong>without an account, without a cloud, and without advertising or tracking.</strong> We operate <strong>no servers of our own</strong> and therefore <strong>cannot</strong> collect, store, or see your personal data. Your location and settings stay <strong>on your device</strong>. The few cases in which data leaves your device are listed explicitly below — and each one is either optional or triggered by you.</p>
+<p>Vakitkar is built to work <strong>without an account, without a cloud, and without advertising or tracking.</strong> We operate <strong>no servers of our own</strong> and therefore <strong>cannot</strong> collect, store, or see your personal data. Your location and settings stay <strong>on your device</strong>. The few cases in which data leaves your device are listed explicitly below — and, apart from the mosque directory (§3.9) and two small check files (§3.11), each one is either optional or triggered by you.</p>
 <h2 id="en-3-what-the-app-processes-and-where-the-data-goes">3. What the app processes, and where the data goes</h2>
 <h3>3.1 Location (GPS)</h3>
 <p>To show correct prayer times and the Qibla direction, the app needs your geographic coordinates.</p>
 <ul>
 <li><strong>How:</strong> obtained on your device via the operating system's location service, only after you grant location permission.</li>
 <li><strong>Purpose:</strong> local calculation of prayer times and the Qibla bearing.</li>
-<li><strong>Where it goes:</strong> it stays <strong>on your device</strong>. It is stored locally only and is <strong>never transmitted to us</strong> (we have no server to receive it).</li>
+<li><strong>Where it goes:</strong> it stays <strong>on your device</strong>. It is stored locally only and is <strong>never transmitted to us</strong> (we have no server to receive it). Location data can leave your device only in these cases: the optional place-name lookup through your platform's geocoding service (§3.2); the choice of files for the mosque directory, which reveals your approximate region (§3.9); and a mosque report, which can contain an exact position you saved yourself and which becomes public (§3.10).</li>
 <li><strong>Legal basis:</strong> your consent, Art. 6(1)(a) GDPR (the device permission prompt). You can revoke it any time in your system settings; the app then falls back to manual location entry.</li>
 </ul>
 <h3>3.2 Place-name lookup (reverse geocoding)</h3>
@@ -154,7 +154,7 @@ footer .gold{color:var(--gold);}
 <h3>3.7 Crash reports (voluntary, off by default)</h3>
 <p>If the app crashes, it can send us a technical report so we can find the bug. <strong>This is off unless you switch it on yourself</strong> — under Settings ▸ &quot;Send crash reports&quot;. Without your consent the service is <strong>never even started</strong>: no connection, no transmission.</p>
 <p>If you switch it on, a report contains the <strong>stack trace</strong> (which line of code failed), app version and build number, device model, operating-system version and the interface language.</p>
-<p><strong>Not included:</strong> your location, the chosen city, your prayer times, device identifiers, your IP address as user data, screenshots, or the structure of the displayed page. We have explicitly disabled those options.</p>
+<p><strong>Not included:</strong> your location, the chosen city, your prayer times, device identifiers, your IP address as user data, screenshots, or the structure of the displayed page. We have explicitly disabled those options. The app also sends <strong>no usage sessions</strong>, and every report carries the same placeholder user (&quot;anonym&quot;) instead of an identifier for your installation, so reports cannot be linked to one device.</p>
 <p>Reports are processed by <strong>Sentry</strong> under its own privacy policy (<a href="https://sentry.io/privacy/" rel="noopener noreferrer" target="_blank">https://sentry.io/privacy/</a>). You can withdraw consent at any time; it takes effect the next time the app starts.</p>
 <h3>3.8 Prayer log</h3>
 <ul>
@@ -164,6 +164,13 @@ footer .gold{color:var(--gold);}
 <li><strong>Backup:</strong> because the log sits with the settings, Android's automatic backup <strong>includes</strong> it (§5.1) so it survives a change of device. If you do not want that, turn off Android's backup for the app in the system settings.</li>
 <li><strong>Deleting:</strong> tapping again clears an entry; uninstalling the app removes everything.</li>
 </ul>
+<h3>3.9 Mosque directory</h3>
+<p>As soon as your location is known, the app downloads the list of mosques around you from the same GitHub Pages site as in §3.4 — at most once per file per day, whether or not you open the mosque feature. Usually this is one file per <strong>country</strong> (near a border, also the neighbouring country in range). For <strong>Türkiye</strong> the list is split into tiles of about 111 × 85 km, so the request reveals your approximate <strong>region</strong> (roughly province level); near a tile or country border, the set of files requested narrows the area further. The request never reveals your exact position or which mosque you choose. Your device's <strong>IP address</strong> is transmitted to GitHub as described in §3.4. Your chosen mosque stays on your device. Purpose: showing mosques near you and their prayer times. Legal basis: our legitimate interest in providing this function, Art. 6(1)(f) GDPR.</p>
+<h3>3.10 Reporting a mosque to OpenStreetMap</h3>
+<p>If a mosque is missing or has a wrong name, you can report it in the app. Only <strong>when you send the report</strong> does the app create an <strong>anonymous note</strong> at <strong>OpenStreetMap</strong> (OpenStreetMap Foundation, United Kingdom), so that volunteer mappers can check it. The note contains the text you wrote, the <strong>coordinates</strong> of the entry and the remark that it was reported through Vakitkar. For a mosque from the directory, it also contains the OpenStreetMap reference and the address listed there. For a mosque <strong>you entered yourself</strong>, it contains the address you typed and the position stored with the entry — if you chose to save your current position when creating it, that is <strong>your own location</strong> at that moment. Your device transmits its <strong>IP address</strong> and the app version to OpenStreetMap.</p>
+<p><strong>Please note:</strong> OpenStreetMap notes are <strong>public and permanent</strong> — anyone can read them, and we cannot delete them. Do not write personal details into the text. Even for directory entries, a mosque you report is often near where you live. Legal basis: your consent by sending the report, Art. 6(1)(a) GDPR. OpenStreetMap processes the note under its own privacy policy (<a href="https://osmfoundation.org/wiki/PrivacyPolicy" rel="noopener noreferrer" target="_blank">https://osmfoundation.org/wiki/PrivacyPolicy</a>).</p>
+<h3>3.11 Two small check files</h3>
+<p>At most once a day, whatever calculation method you use, the app downloads two small files from the same GitHub Pages site (§3.4): the <strong>table of religious days</strong> (so dates can be corrected without an app update) and the <strong>minimum supported app version</strong> (so we can warn you if your version stops working correctly). Neither request contains anything about you; only your device's <strong>IP address</strong> reaches GitHub, as described in §3.4.</p>
 <h2 id="en-4-what-we-do-not-do">4. What we do <strong>not</strong> do</h2>
 <ul>
 <li><strong>No advertising</strong>, no ad networks, no ad identifiers.</li>
@@ -188,11 +195,14 @@ footer .gold{color:var(--gold);}
 <ul>
 <li>your device's OS <strong>geocoding</strong> provider (Google / Apple) — §3.2;</li>
 <li>the <strong>app store</strong> for purchases (Google / Apple) — §3.6;</li>
-<li>an <strong>optional</strong> official prayer-time provider, only if you enable it — §3.4.</li>
+<li>an <strong>optional</strong> official prayer-time provider, only if you enable it — §3.4;</li>
+<li><strong>GitHub</strong> (GitHub Inc., USA), which hosts our published files: prayer times, mosque directory and the two check files — §3.4, §3.9, §3.11;</li>
+<li><strong>OpenStreetMap</strong> (OpenStreetMap Foundation), only when you report a mosque — §3.10;</li>
+<li><strong>Sentry</strong>, only if you switched on crash reports — §3.7.</li>
 </ul>
 <p>Each processes data under its own privacy policy.</p>
 <h2 id="en-7-international-transfers">7. International transfers</h2>
-<p>We run no servers of our own. A transfer to the <strong>United States</strong> does occur when the app downloads the official prayer times from GitHub Pages (see 3.4) — this necessarily transmits your IP address to GitHub Inc. That transfer does not happen at all if you choose a calculation method other than Turkiye (Diyanet). Any further transfer arises only from the third-party platform services above and is governed by their respective safeguards and privacy policies.</p>
+<p>We run no servers of our own. A transfer to the <strong>United States</strong> does occur whenever the app downloads files from GitHub Pages (§3.4, §3.9, §3.11) — this necessarily transmits your IP address to GitHub Inc. Choosing a calculation method other than Türkiye (Diyanet) avoids the prayer-time files; the mosque directory (§3.9) and the two check files (§3.11) are still downloaded. Any further transfer arises only from the third-party platform services above and is governed by their respective safeguards and privacy policies.</p>
 <h2 id="en-8-your-rights-gdpr">8. Your rights (GDPR)</h2>
 <p>You have the rights of access, rectification, erasure, restriction, portability, and objection (Art. 15–21 GDPR). Since we hold <strong>no</strong> personal data about you on any server, most of these are exercised directly on your device (revoke location permission, clear app data, or uninstall). For any request or question, contact us at <span class="rv" data-mail>moc.skiplut@raktikav</span>. You also have the right to lodge a complaint with a data protection supervisory authority.</p>
 <h2 id="en-9-children">9. Children</h2>
@@ -217,7 +227,7 @@ footer .gold{color:var(--gold);}
       <li><a href="#de-11-kontakt">11. Kontakt</a></li>
     </ol></div>
 <h1>Datenschutzerklärung — Vakitkar</h1>
-<p><strong>Gültig ab:</strong> 23. Oktober 2026 · <strong>Version:</strong> 1.11</p>
+<p><strong>Gültig ab:</strong> 5. November 2026 · <strong>Version:</strong> 1.12</p>
 <h2 id="de-1-wer-ist-verantwortlich">1. Wer ist verantwortlich</h2>
 <p>Diese App („Vakitkar&quot;, „die App&quot;) wird von <strong>TULPIKS</strong>, Inhaber <span class="rv">iceM namsO</span> (Einzelunternehmer; „wir&quot;/„uns&quot;), herausgegeben. Wir sind Verantwortlicher im Sinne der EU-Datenschutz- Grundverordnung (DSGVO).</p>
 <ul>
@@ -226,14 +236,14 @@ footer .gold{color:var(--gold);}
 </ul>
 <p>Bei Fragen zu dieser Erklärung oder zu deinen Daten schreib uns an die obige Adresse.</p>
 <h2 id="de-2-unser-datenschutz-versprechen-in-einem-absatz">2. Unser Datenschutz-Versprechen in einem Absatz</h2>
-<p>Vakitkar funktioniert <strong>ohne Konto, ohne Cloud und ohne Werbung oder Tracking.</strong> Wir betreiben <strong>keine eigenen Server</strong> und können deine personenbezogenen Daten daher <strong>nicht</strong> erheben, speichern oder einsehen. Dein Standort, deine Einstellungen und dein Gebetsprotokoll bleiben <strong>auf deinem Gerät</strong>. Die wenigen Fälle, in denen Daten das Gerät verlassen, sind unten ausdrücklich aufgeführt — und jeder ist entweder optional oder wird von dir ausgelöst.</p>
+<p>Vakitkar funktioniert <strong>ohne Konto, ohne Cloud und ohne Werbung oder Tracking.</strong> Wir betreiben <strong>keine eigenen Server</strong> und können deine personenbezogenen Daten daher <strong>nicht</strong> erheben, speichern oder einsehen. Dein Standort, deine Einstellungen und dein Gebetsprotokoll bleiben <strong>auf deinem Gerät</strong>. Die wenigen Fälle, in denen Daten das Gerät verlassen, sind unten ausdrücklich aufgeführt — und bis auf das Moschee-Verzeichnis (§3.9) und zwei kleine Prüfdateien (§3.11) ist jeder entweder optional oder wird von dir ausgelöst.</p>
 <h2 id="de-3-was-die-app-verarbeitet-und-wohin-die-daten-gehen">3. Was die App verarbeitet und wohin die Daten gehen</h2>
 <h3>3.1 Standort (GPS)</h3>
 <p>Für korrekte Gebetszeiten und die Qibla-Richtung benötigt die App deine geografischen Koordinaten.</p>
 <ul>
 <li><strong>Wie:</strong> auf deinem Gerät über den Standortdienst des Betriebssystems — erst nachdem du die Standortberechtigung erteilt hast.</li>
 <li><strong>Zweck:</strong> lokale Berechnung der Gebetszeiten und der Qibla-Peilung.</li>
-<li><strong>Wohin:</strong> die Daten bleiben <strong>auf deinem Gerät</strong>. Sie werden nur lokal gespeichert und <strong>niemals an uns übertragen</strong> (wir haben keinen Server, der sie empfangen könnte).</li>
+<li><strong>Wohin:</strong> die Daten bleiben <strong>auf deinem Gerät</strong>. Sie werden nur lokal gespeichert und <strong>niemals an uns übertragen</strong> (wir haben keinen Server, der sie empfangen könnte). Standortangaben verlassen dein Gerät nur in diesen Fällen: bei der optionalen Ortsname-Auflösung über den Geocoding-Dienst deiner Plattform (§3.2); über die Auswahl der Dateien für das Moschee-Verzeichnis, die deine ungefähre Region verrät (§3.9); und in einer Moschee-Meldung, die eine selbst gespeicherte, genaue Position enthalten kann und öffentlich wird (§3.10).</li>
 <li><strong>Rechtsgrundlage:</strong> deine Einwilligung, Art. 6 Abs. 1 lit. a DSGVO (die Berechtigungsabfrage des Geräts). Du kannst sie jederzeit in den Systemeinstellungen widerrufen; die App nutzt dann die manuelle Standorteingabe.</li>
 </ul>
 <h3>3.2 Ortsname-Auflösung (Reverse-Geocoding)</h3>
@@ -257,7 +267,7 @@ footer .gold{color:var(--gold);}
 <h3>3.7 Absturzberichte (freiwillig, standardmäßig aus)</h3>
 <p>Stürzt die App ab, kann sie uns einen technischen Bericht senden, damit wir den Fehler finden. <strong>Das ist ausgeschaltet, solange du es nicht selbst einschaltest</strong> — unter Einstellungen ▸ „Absturzberichte senden&quot;. Ohne deine Zustimmung wird der Dienst <strong>gar nicht erst gestartet</strong>: keine Verbindung, keine Übertragung.</p>
 <p>Schaltest du ihn ein, enthält ein Bericht den <strong>Stapelabzug</strong> (welche Codestelle gescheitert ist), App-Version und Build-Nummer, Gerätemodell, Betriebssystem- Version und die Sprache der Oberfläche.</p>
-<p><strong>Nicht enthalten:</strong> dein Standort, der gewählte Ort, deine Gebetszeiten, Geräte-Kennungen, deine IP-Adresse als Nutzerangabe, Bildschirmfotos oder der Aufbau der angezeigten Seite. Wir haben diese Optionen ausdrücklich abgeschaltet.</p>
+<p><strong>Nicht enthalten:</strong> dein Standort, der gewählte Ort, deine Gebetszeiten, Geräte-Kennungen, deine IP-Adresse als Nutzerangabe, Bildschirmfotos oder der Aufbau der angezeigten Seite. Wir haben diese Optionen ausdrücklich abgeschaltet. Die App sendet außerdem <strong>keine Nutzungssitzungen</strong>, und jeder Bericht trägt denselben Platzhalter-Nutzer („anonym“) statt einer Kennung deiner Installation — Berichte lassen sich also keinem Gerät zuordnen.</p>
 <p>Verarbeitet werden die Berichte von <strong>Sentry</strong> nach dessen eigener Datenschutzerklärung (<a href="https://sentry.io/privacy/" rel="noopener noreferrer" target="_blank">https://sentry.io/privacy/</a>). Du kannst die Zustimmung jederzeit widerrufen; sie wirkt ab dem nächsten Start der App.</p>
 <h3>3.8 Gebetsprotokoll</h3>
 <ul>
@@ -267,6 +277,13 @@ footer .gold{color:var(--gold);}
 <li><strong>Sicherung:</strong> Weil das Protokoll bei den Einstellungen liegt, nimmt Androids automatische Sicherung es <strong>mit</strong> (§5.1), damit es einen Gerätewechsel übersteht. Wer das nicht möchte, schaltet Androids Sicherung für die App in den Systemeinstellungen ab.</li>
 <li><strong>Löschen:</strong> Ein erneuter Tipp nimmt einen Eintrag zurück; das Deinstallieren der App entfernt alles.</li>
 </ul>
+<h3>3.9 Moschee-Verzeichnis</h3>
+<p>Sobald dein Standort bekannt ist, lädt die App die Liste der Moscheen in deiner Umgebung von derselben GitHub-Pages-Seite wie in §3.4 — höchstens einmal je Datei und Tag, auch wenn du die Moschee-Funktion nicht öffnest. Meist ist das eine Datei je <strong>Land</strong> (in Grenznähe auch die des Nachbarlandes in Reichweite). Für die <strong>Türkei</strong> ist die Liste in Kacheln von etwa 111 × 85 km geteilt; die Anfrage verrät dort deine ungefähre <strong>Region</strong> (etwa Provinzebene), und an einer Kachel- oder Landesgrenze grenzt die Auswahl der Dateien das Gebiet weiter ein. Deine genaue Position und die gewählte Moschee verrät die Anfrage nie. Dabei geht die <strong>IP-Adresse</strong> deines Geräts an GitHub, wie in §3.4 beschrieben. Deine gewählte Moschee bleibt auf deinem Gerät. Zweck: Moscheen in deiner Nähe und ihre Gebetszeiten anzeigen. Rechtsgrundlage: unser berechtigtes Interesse, diese Funktion anzubieten, Art. 6 Abs. 1 lit. f DSGVO.</p>
+<h3>3.10 Moschee an OpenStreetMap melden</h3>
+<p>Fehlt eine Moschee oder stimmt ihr Name nicht, kannst du das in der App melden. Erst <strong>wenn du die Meldung absendest</strong>, legt die App eine <strong>anonyme Notiz</strong> bei <strong>OpenStreetMap</strong> (OpenStreetMap Foundation, Vereinigtes Königreich) an, damit ehrenamtliche Kartierer sie prüfen können. Die Notiz enthält deinen Text, die <strong>Koordinaten</strong> des Eintrags und den Hinweis, dass die Meldung über Vakitkar kam. Bei einer Moschee aus dem Verzeichnis kommen der OpenStreetMap-Verweis und die dort verzeichnete Adresse dazu. Bei einer <strong>selbst eingetragenen</strong> Moschee sind es die Adresse, die du eingegeben hast, und die beim Eintrag gespeicherte Position — hast du dabei „aktuelle Position speichern“ gewählt, ist das <strong>dein eigener Standort</strong> zu diesem Zeitpunkt. Dein Gerät übermittelt dabei seine <strong>IP-Adresse</strong> und die App-Version an OpenStreetMap.</p>
+<p><strong>Bitte beachten:</strong> OpenStreetMap-Notizen sind <strong>öffentlich und dauerhaft</strong> — jeder kann sie lesen, und wir können sie nicht löschen. Schreib keine persönlichen Angaben in den Text. Auch eine Moschee aus dem Verzeichnis liegt oft in der Nähe deines Wohnorts. Rechtsgrundlage: deine Einwilligung durch das Absenden, Art. 6 Abs. 1 lit. a DSGVO. OpenStreetMap verarbeitet die Notiz nach eigener Datenschutzerklärung (<a href="https://osmfoundation.org/wiki/PrivacyPolicy" rel="noopener noreferrer" target="_blank">https://osmfoundation.org/wiki/PrivacyPolicy</a>).</p>
+<h3>3.11 Zwei kleine Prüfdateien</h3>
+<p>Höchstens einmal täglich, unabhängig von der Berechnungsmethode, lädt die App zwei kleine Dateien von derselben GitHub-Pages-Seite (§3.4): die <strong>Tabelle der religiösen Tage</strong> (damit sich Termine ohne App-Update berichtigen lassen) und die <strong>kleinste noch unterstützte App-Version</strong> (damit wir warnen können, wenn deine Version nicht mehr richtig funktioniert). Keine der beiden Anfragen enthält etwas über dich; nur die <strong>IP-Adresse</strong> deines Geräts erreicht GitHub, wie in §3.4 beschrieben.</p>
 <h2 id="de-4-was-wir-nicht-tun">4. Was wir <strong>nicht</strong> tun</h2>
 <ul>
 <li><strong>Keine Werbung</strong>, keine Werbenetzwerke, keine Werbe-IDs.</li>
@@ -291,11 +308,14 @@ footer .gold{color:var(--gold);}
 <ul>
 <li>den <strong>Geocoding</strong>-Dienst deines Betriebssystems (Google / Apple) — §3.2;</li>
 <li>den <strong>App-Store</strong> für Käufe (Google / Apple) — §3.6;</li>
-<li>einen <strong>optionalen</strong> offiziellen Gebetszeiten-Anbieter, nur wenn du ihn aktivierst — §3.4.</li>
+<li>einen <strong>optionalen</strong> offiziellen Gebetszeiten-Anbieter, nur wenn du ihn aktivierst — §3.4;</li>
+<li><strong>GitHub</strong> (GitHub Inc., USA), wo unsere veröffentlichten Dateien liegen: Gebetszeiten, Moschee-Verzeichnis und die zwei Prüfdateien — §3.4, §3.9, §3.11;</li>
+<li><strong>OpenStreetMap</strong> (OpenStreetMap Foundation), nur wenn du eine Moschee meldest — §3.10;</li>
+<li><strong>Sentry</strong>, nur wenn du Absturzberichte eingeschaltet hast — §3.7.</li>
 </ul>
 <p>Jeder verarbeitet Daten nach seiner eigenen Datenschutzerklärung.</p>
 <h2 id="de-7-internationale-übermittlungen">7. Internationale Übermittlungen</h2>
-<p>Wir betreiben keine eigenen Server. Eine Übermittlung in die <strong>USA</strong> entsteht jedoch, wenn die App die amtlichen Gebetszeiten von GitHub Pages lädt (§3.4) — dabei wird technisch bedingt deine IP-Adresse an GitHub Inc. übermittelt. Diese Übermittlung entfällt vollständig, wenn du eine andere Berechnungsmethode als „Türkiye (Diyanet)&quot; wählst. Darüber hinaus nehmen wir selbst keine internationalen Datenübermittlungen vor. Eine Übermittlung entsteht nur durch die oben genannten Plattformdienste Dritter und unterliegt deren jeweiligen Garantien und Datenschutzerklärungen.</p>
+<p>Wir betreiben keine eigenen Server. Eine Übermittlung in die <strong>USA</strong> entsteht jedoch, wann immer die App Dateien von GitHub Pages lädt (§3.4, §3.9, §3.11) — dabei wird technisch bedingt deine IP-Adresse an GitHub Inc. übermittelt. Mit einer anderen Berechnungsmethode als „Türkiye (Diyanet)&quot; entfallen die Gebetszeit-Dateien; das Moschee-Verzeichnis (§3.9) und die zwei Prüfdateien (§3.11) werden weiter geladen. Darüber hinaus nehmen wir selbst keine internationalen Datenübermittlungen vor. Eine Übermittlung entsteht nur durch die oben genannten Plattformdienste Dritter und unterliegt deren jeweiligen Garantien und Datenschutzerklärungen.</p>
 <h2 id="de-8-deine-rechte-dsgvo">8. Deine Rechte (DSGVO)</h2>
 <p>Dir stehen die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch zu (Art. 15–21 DSGVO). Da wir <strong>keine</strong> personenbezogenen Daten über dich auf einem Server vorhalten, übst du die meisten direkt auf deinem Gerät aus (Standortberechtigung widerrufen, App-Daten löschen oder deinstallieren). Für jede Anfrage oder Frage erreichst du uns unter <span class="rv" data-mail>moc.skiplut@raktikav</span>. Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</p>
 <h2 id="de-9-kinder">9. Kinder</h2>
@@ -320,7 +340,7 @@ footer .gold{color:var(--gold);}
       <li><a href="#tr-11-iletişim">11. İletişim</a></li>
     </ol></div>
 <h1>Gizlilik Politikası — Vakitkar</h1>
-<p><strong>Yürürlük tarihi:</strong> 23 Ekim 2026 · <strong>Sürüm:</strong> 1.11</p>
+<p><strong>Yürürlük tarihi:</strong> 5 Kasım 2026 · <strong>Sürüm:</strong> 1.12</p>
 <h2 id="tr-1-sorumlu-kim">1. Sorumlu kim</h2>
 <p>Bu uygulama (&quot;Vakitkar&quot;, &quot;uygulama&quot;) <strong>TULPIKS</strong> (sahibi <span class="rv">iceM namsO</span>, şahıs işletmesi; &quot;biz&quot;) tarafından yayımlanmaktadır. AB Genel Veri Koruma Tüzüğü (GDPR) anlamında veri sorumlusu biziz.</p>
 <ul>
@@ -329,14 +349,14 @@ footer .gold{color:var(--gold);}
 </ul>
 <p>Bu politika veya verileriniz hakkında sorunuz olursa yukarıdaki adresten bize yazın.</p>
 <h2 id="tr-2-tek-paragrafta-gizlilik-sözümüz">2. Tek paragrafta gizlilik sözümüz</h2>
-<p>Vakitkar <strong>hesap gerektirmeden, verilerinizi bir sunucuya yüklemeden, reklam ve izleme olmadan</strong> çalışacak şekilde tasarlanmıştır. <strong>Kendimize ait sunucu işletmiyoruz</strong> ve bu nedenle kişisel verilerinizi toplayamaz, saklayamaz veya göremeyiz. Konumunuz ve ayarlarınız <strong>cihazınızda</strong> kalır. Verilerin cihazdan ayrıldığı az sayıdaki durum aşağıda açıkça belirtilmiştir — her biri ya isteğe bağlıdır ya da sizin tarafınızdan başlatılır.</p>
+<p>Vakitkar <strong>hesap gerektirmeden, verilerinizi bir sunucuya yüklemeden, reklam ve izleme olmadan</strong> çalışacak şekilde tasarlanmıştır. <strong>Kendimize ait sunucu işletmiyoruz</strong> ve bu nedenle kişisel verilerinizi toplayamaz, saklayamaz veya göremeyiz. Konumunuz ve ayarlarınız <strong>cihazınızda</strong> kalır. Verilerin cihazdan ayrıldığı az sayıdaki durum aşağıda açıkça belirtilmiştir — cami listesi (§3.9) ve iki küçük kontrol dosyası (§3.11) dışında her biri ya isteğe bağlıdır ya da sizin tarafınızdan başlatılır.</p>
 <h2 id="tr-3-uygulama-neyi-işler-ve-veri-nereye-gider">3. Uygulama neyi işler ve veri nereye gider</h2>
 <h3>3.1 Konum (GPS)</h3>
 <p>Doğru namaz vakitlerini ve kıble yönünü gösterebilmek için uygulama coğrafi koordinatlarınıza ihtiyaç duyar.</p>
 <ul>
 <li><strong>Nasıl:</strong> cihazınızda, işletim sisteminin konum hizmeti aracılığıyla — yalnızca siz konum iznini verdikten sonra.</li>
 <li><strong>Amaç:</strong> namaz vakitlerinin ve kıble yönünün yerel olarak hesaplanması.</li>
-<li><strong>Nereye gider:</strong> <strong>cihazınızda</strong> kalır. Yalnızca yerel olarak saklanır ve <strong>bize asla iletilmez</strong> (alacak bir sunucumuz yok).</li>
+<li><strong>Nereye gider:</strong> <strong>cihazınızda</strong> kalır. Yalnızca yerel olarak saklanır ve <strong>bize asla iletilmez</strong> (alacak bir sunucumuz yok). Konum bilgisi cihazınızdan yalnızca şu durumlarda çıkabilir: platformunuzun coğrafi kodlama hizmetiyle isteğe bağlı yer adı çözümlemesinde (§3.2); cami listesi için seçilen dosyalarla, yaklaşık bölgenizi açığa çıkararak (§3.9); ve kendi kaydettiğiniz tam bir konumu içerebilen ve herkese açık hâle gelen bir cami bildiriminde (§3.10).</li>
 <li><strong>Hukuki dayanak:</strong> açık rızanız, GDPR Md. 6(1)(a) (cihazın izin istemi). Bu izni sistem ayarlarından istediğiniz zaman geri alabilirsiniz; uygulama o zaman elle konum girişine döner.</li>
 </ul>
 <h3>3.2 Yer adı çözümlemesi (ters coğrafi kodlama)</h3>
@@ -360,7 +380,7 @@ footer .gold{color:var(--gold);}
 <h3>3.7 Çökme raporları (gönüllü, varsayılan olarak kapalı)</h3>
 <p>Uygulama çökerse, hatayı bulabilmemiz için bize teknik bir rapor gönderebilir. <strong>Siz kendiniz açmadıkça bu kapalıdır</strong> — Ayarlar ▸ “Çökme raporları gönder”. Onayınız olmadan servis <strong>hiç başlatılmaz</strong>: bağlantı yok, aktarım yok.</p>
 <p>Açarsanız bir rapor şunları içerir: <strong>yığın izi</strong> (hangi kod satırının başarısız olduğu), uygulama sürümü ve derleme numarası, cihaz modeli, işletim sistemi sürümü ve arayüz dili.</p>
-<p><strong>İçermez:</strong> konumunuz, seçilen şehir, namaz vakitleriniz, cihaz tanımlayıcıları, kullanıcı verisi olarak IP adresiniz, ekran görüntüleri veya gösterilen sayfanın yapısı. Bu seçenekleri açıkça devre dışı bıraktık.</p>
+<p><strong>İçermez:</strong> konumunuz, seçilen şehir, namaz vakitleriniz, cihaz tanımlayıcıları, kullanıcı verisi olarak IP adresiniz, ekran görüntüleri veya gösterilen sayfanın yapısı. Bu seçenekleri açıkça devre dışı bıraktık. Uygulama ayrıca <strong>kullanım oturumu göndermez</strong> ve her rapor, kurulumunuza ait bir tanımlayıcı yerine aynı yer tutucu kullanıcıyı (“anonym”) taşır — raporlar bu nedenle bir cihazla ilişkilendirilemez.</p>
 <p>Raporlar <strong>Sentry</strong> tarafından kendi gizlilik politikasına göre işlenir (<a href="https://sentry.io/privacy/" rel="noopener noreferrer" target="_blank">https://sentry.io/privacy/</a>). Onayı istediğiniz zaman geri alabilirsiniz; uygulamanın bir sonraki açılışında geçerli olur.</p>
 <h3>3.8 Namaz takibi</h3>
 <ul>
@@ -370,6 +390,13 @@ footer .gold{color:var(--gold);}
 <li><strong>Yedekleme:</strong> kayıt ayarların yanında durduğu için Android'in otomatik yedeklemesi onu <strong>da alır</strong> (§5.1); böylece cihaz değişikliğini atlatır. İstemiyorsanız sistem ayarlarından uygulama için Android yedeklemesini kapatabilirsiniz.</li>
 <li><strong>Silme:</strong> tekrar dokunmak bir kaydı geri alır; uygulamayı kaldırmak her şeyi siler.</li>
 </ul>
+<h3>3.9 Cami listesi</h3>
+<p>Konumunuz belli olur olmaz uygulama, çevrenizdeki camilerin listesini §3.4'teki aynı GitHub Pages sitesinden indirir — dosya başına günde en fazla bir kez, cami özelliğini açmasanız bile. Genellikle bu, <strong>ülke</strong> başına bir dosyadır (sınıra yakınsanız menzildeki komşu ülkeninki de). <strong>Türkiye</strong> için liste yaklaşık 111 × 85 km'lik karelere bölünmüştür; istek orada yaklaşık <strong>bölgenizi</strong> (kabaca il düzeyi) açığa çıkarır, bir kare veya ülke sınırına yakınsanız istenen dosyalar alanı daha da daraltır. İstek hiçbir zaman tam konumunuzu veya seçtiğiniz camiyi açığa çıkarmaz. Bu sırada cihazınızın <strong>IP adresi</strong>, §3.4'te anlatıldığı gibi GitHub'a iletilir. Seçtiğiniz cami cihazınızda kalır. Amaç: yakınınızdaki camileri ve vakitlerini göstermek. Hukuki dayanak: bu işlevi sunmaya yönelik meşru menfaatimiz, GDPR md. 6/1 (f).</p>
+<h3>3.10 Bir camiyi OpenStreetMap'e bildirme</h3>
+<p>Bir cami eksikse veya adı yanlışsa bunu uygulamada bildirebilirsiniz. Uygulama <strong>ancak bildirimi gönderdiğinizde</strong>, gönüllü haritacıların kontrol edebilmesi için <strong>OpenStreetMap</strong>'te (OpenStreetMap Foundation, Birleşik Krallık) <strong>anonim bir not</strong> oluşturur. Not; yazdığınız metni, kaydın <strong>koordinatlarını</strong> ve bildirimin Vakitkar üzerinden geldiği bilgisini içerir. Listedeki bir camide buna OpenStreetMap bağlantısı ve orada kayıtlı adres eklenir. <strong>Kendi eklediğiniz</strong> bir camide ise girdiğiniz adres ve kayıtla birlikte saklanan konum gönderilir — kaydı oluştururken “mevcut konumu kaydet” seçtiyseniz bu, o andaki <strong>kendi konumunuzdur</strong>. Cihazınız bu sırada <strong>IP adresini</strong> ve uygulama sürümünü OpenStreetMap'e iletir.</p>
+<p><strong>Lütfen dikkat:</strong> OpenStreetMap notları <strong>herkese açık ve kalıcıdır</strong> — herkes okuyabilir ve biz silemeyiz. Metne kişisel bilgi yazmayın. Listedeki bir cami de çoğu zaman oturduğunuz yere yakındır. Hukuki dayanak: bildirimi göndererek verdiğiniz onay, GDPR md. 6/1 (a). OpenStreetMap notu kendi gizlilik politikasına göre işler (<a href="https://osmfoundation.org/wiki/PrivacyPolicy" rel="noopener noreferrer" target="_blank">https://osmfoundation.org/wiki/PrivacyPolicy</a>).</p>
+<h3>3.11 İki küçük kontrol dosyası</h3>
+<p>Uygulama, hangi hesaplama yöntemini kullanırsanız kullanın, günde en fazla bir kez aynı GitHub Pages sitesinden (§3.4) iki küçük dosya indirir: <strong>dinî günler tablosu</strong> (tarihler uygulama güncellemesi olmadan düzeltilebilsin diye) ve <strong>desteklenen en düşük uygulama sürümü</strong> (sürümünüz artık düzgün çalışmazsa sizi uyarabilmek için). İki istek de sizinle ilgili hiçbir şey içermez; GitHub'a yalnızca cihazınızın <strong>IP adresi</strong> ulaşır (§3.4).</p>
 <h2 id="tr-4-yapmadıklarımız">4. Yapmadıklarımız</h2>
 <ul>
 <li><strong>Reklam yok</strong>, reklam ağı yok, reklam kimliği yok.</li>
@@ -394,11 +421,14 @@ footer .gold{color:var(--gold);}
 <ul>
 <li>işletim sisteminizin <strong>coğrafi kodlama</strong> sağlayıcısı (Google / Apple) — §3.2;</li>
 <li>satın almalar için <strong>uygulama mağazası</strong> (Google / Apple) — §3.6;</li>
-<li>yalnızca siz etkinleştirirseniz <strong>isteğe bağlı</strong> bir resmî namaz vakti sağlayıcısı — §3.4.</li>
+<li>yalnızca siz etkinleştirirseniz <strong>isteğe bağlı</strong> bir resmî namaz vakti sağlayıcısı — §3.4;</li>
+<li>yayımladığımız dosyaları barındıran <strong>GitHub</strong> (GitHub Inc., ABD): namaz vakitleri, cami listesi ve iki kontrol dosyası — §3.4, §3.9, §3.11;</li>
+<li>yalnızca bir camiyi bildirdiğinizde <strong>OpenStreetMap</strong> (OpenStreetMap Foundation) — §3.10;</li>
+<li>yalnızca çökme raporlarını açtıysanız <strong>Sentry</strong> — §3.7.</li>
 </ul>
 <p>Her biri veriyi kendi gizlilik politikasına göre işler.</p>
 <h2 id="tr-7-uluslararası-aktarımlar">7. Uluslararası aktarımlar</h2>
-<p>Kendi sunucumuzu işletmiyoruz. Ancak uygulama resmî namaz vakitlerini GitHub Pages'ten indirdiğinde ABD'ye bir aktarım gerçekleşir (bkz. 3.4) — bu sırada IP adresiniz teknik olarak zorunlu biçimde GitHub Inc.'e iletilir. “Türkiye (Diyanet)” dışında bir hesaplama yöntemi seçerseniz bu aktarım hiç gerçekleşmez. Bunun ötesindeki aktarımlar yalnızca yukarıdaki üçüncü taraf platform hizmetlerinden doğar ve onların güvencelerine ve gizlilik politikalarına tabidir.</p>
+<p>Kendi sunucumuzu işletmiyoruz. Ancak uygulama GitHub Pages'ten her dosya indirdiğinde ABD'ye bir aktarım gerçekleşir (§3.4, §3.9, §3.11) — bu sırada IP adresiniz teknik olarak zorunlu biçimde GitHub Inc.'e iletilir. “Türkiye (Diyanet)” dışında bir hesaplama yöntemi seçerseniz namaz vakti dosyaları indirilmez; cami listesi (§3.9) ve iki kontrol dosyası (§3.11) yine indirilir. Bunun ötesindeki aktarımlar yalnızca yukarıdaki üçüncü taraf platform hizmetlerinden doğar ve onların güvencelerine ve gizlilik politikalarına tabidir.</p>
 <h2 id="tr-8-haklarınız-gdpr">8. Haklarınız (GDPR)</h2>
 <p>Erişim, düzeltme, silme, kısıtlama, taşınabilirlik ve itiraz haklarına sahipsiniz (GDPR Md. 15–21). Hakkınızda herhangi bir sunucuda <strong>hiçbir</strong> kişisel veri tutmadığımız için bunların çoğunu doğrudan cihazınızda kullanırsınız (konum iznini geri alma, uygulama verilerini temizleme veya kaldırma). Her türlü talep veya soru için <span class="rv" data-mail>moc.skiplut@raktikav</span> adresinden bize ulaşın. Ayrıca bir veri koruma denetim makamına şikâyette bulunma hakkınız vardır.</p>
 <h2 id="tr-9-çocuklar">9. Çocuklar</h2>
